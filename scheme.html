@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juggernaut Industries — 3 Design Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --guide-bg: #f0f0f0;
+    --guide-card: #ffffff;
+    --guide-text: #1a1a1a;
+    --guide-muted: #777;
+    --guide-border: #e0e0e0;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Nunito Sans', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-body); background: var(--guide-bg); color: var(--guide-text); line-height: 1.6; }
+
+  .page-header { background: #0a0a0a; color: #fff; padding: 50px 60px; text-align: center; position: relative; }
+  .page-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #3b5998, #8899aa, #c9a800); }
+  .page-header h1 { font-family: var(--font-display); font-size: 2.4rem; font-weight: 600; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 4px; }
+  .page-header .subtitle { font-family: var(--font-heading); font-size: 0.78rem; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; color: #888; }
+  .page-header .type-badge { display: inline-block; margin-top: 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 8px 16px; font-family: var(--font-heading); font-size: 0.68rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #90a4ae; }
+
+  .container { max-width: 1300px; margin: 0 auto; padding: 40px 30px; }
+
+  .type-banner { background: var(--guide-card); border-radius: 12px; padding: 30px 34px; margin-bottom: 36px; box-shadow: 0 1px 10px rgba(0,0,0,0.06); border-left: 4px solid #546e8a; }
+  .type-banner .tb-title { font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #546e8a; margin-bottom: 14px; }
+  .type-banner .tb-row { display: flex; gap: 30px; flex-wrap: wrap; }
+  .type-banner .tb-item { flex: 1; min-width: 220px; }
+  .type-banner .tb-label { font-family: 'Courier New', monospace; font-size: 0.7rem; color: #999; margin-bottom: 4px; }
+
+  .option-nav { display: flex; gap: 0; margin-bottom: 36px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; }
+  .option-tab { flex: 1; padding: 18px 20px; text-align: center; cursor: pointer; font-family: var(--font-heading); font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.3s; border: none; }
+  .option-tab .tab-label { display: block; font-size: 0.68rem; font-weight: 400; letter-spacing: 0.5px; margin-top: 4px; opacity: 0.7; }
+  .tab-a { background: #0D1B2A; color: #E8A317; }
+  .tab-a:hover, .tab-a.active { background: #162a42; }
+  .tab-b { background: #102e50; color: #ffd700; }
+  .tab-b:hover, .tab-b.active { background: #1a3d66; }
+  .tab-c { background: #2c3e50; color: #b0bec5; }
+  .tab-c:hover, .tab-c.active { background: #3a5068; }
+
+  .option-panel { display: none; }
+  .option-panel.active { display: block; animation: fadeIn 0.4s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .opt-section { margin-bottom: 40px; }
+  .opt-section-title { font-family: var(--font-heading); font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 6px; }
+  .opt-section-desc { font-size: 0.88rem; color: var(--guide-muted); margin-bottom: 20px; max-width: 750px; }
+
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+  .sw { width: 155px; border-radius: 10px; overflow: hidden; background: var(--guide-card); box-shadow: 0 1px 8px rgba(0,0,0,0.06); transition: transform 0.2s; }
+  .sw:hover { transform: translateY(-2px); }
+  .sw-color { height: 80px; }
+  .sw-info { padding: 10px 12px; }
+  .sw-name { font-family: var(--font-heading); font-weight: 700; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.3px; color: #333; }
+  .sw-hex { font-family: 'Courier New', monospace; font-size: 0.75rem; color: #999; margin-top: 1px; }
+  .sw-role { font-family: var(--font-body); font-size: 0.7rem; color: #777; margin-top: 4px; line-height: 1.4; }
+
+  .btn-demo { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .d-btn { padding: 12px 28px; border: none; border-radius: 5px; font-family: var(--font-heading); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1.2px; cursor: pointer; transition: all 0.25s; }
+  .d-btn:hover { transform: translateY(-2px); }
+
+  .hero-mock { border-radius: 14px; padding: 55px 45px; color: #fff; position: relative; overflow: hidden; margin-bottom: 16px; }
+  .hero-mock .hero-tag { font-family: var(--font-heading); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 3.5px; font-weight: 500; margin-bottom: 14px; }
+  .hero-mock .hero-title { font-family: var(--font-display); font-weight: 600; font-size: 2.6rem; line-height: 1.1; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 16px; }
+  .hero-mock .hero-body { font-family: var(--font-body); font-size: 0.98rem; max-width: 520px; line-height: 1.7; margin-bottom: 26px; }
+
+  .srv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 16px; }
+  .srv-card { background: var(--guide-card); border-radius: 10px; padding: 24px; box-shadow: 0 1px 8px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; }
+  .srv-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+  .srv-card .icon { font-size: 1.8rem; margin-bottom: 10px; }
+  .srv-card h4 { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .srv-card p { font-family: var(--font-body); font-size: 0.82rem; line-height: 1.5; color: #888; }
+
+  .nav-demo { border-radius: 10px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; height: 60px; margin-bottom: 16px; }
+  .nav-demo .logo-text { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 5px; }
+  .nav-demo .nav-items { display: flex; gap: 24px; list-style: none; font-family: var(--font-heading); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+  .nav-demo .nav-items li { cursor: pointer; transition: color 0.2s; }
+  .nav-demo .nav-cta { padding: 8px 18px; border: none; border-radius: 4px; font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; }
+
+  .footer-demo { border-radius: 10px; padding: 36px 32px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 24px; font-family: var(--font-body); font-size: 0.8rem; line-height: 1.8; }
+  .footer-demo h5 { font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+  .footer-demo ul { list-style: none; }
+  .footer-demo .f-brand { font-family: var(--font-display); font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 4px; }
+  .footer-demo .f-sub { font-family: var(--font-heading); font-weight: 300; font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+
+  .dark-block { border-radius: 12px; padding: 45px 40px; color: #fff; margin-bottom: 16px; }
+  .dark-block .db-line { width: 50px; height: 2px; margin-bottom: 18px; }
+  .dark-block h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 14px; }
+  .dark-block p { font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; max-width: 520px; margin-bottom: 24px; }
+
+  .code-block { border-radius: 10px; padding: 24px; font-family: 'Courier New', monospace; font-size: 0.78rem; line-height: 1.9; overflow-x: auto; white-space: pre; }
+  .code-block .cm { color: #6a9955; }
+  .code-block .pr { color: #9cdcfe; }
+  .code-block .vl { color: #ce9178; }
+
+  .compare-table { width: 100%; border-collapse: collapse; background: var(--guide-card); border-radius: 10px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.05); font-size: 0.85rem; margin-top: 30px; }
+  .compare-table th { font-family: var(--font-heading); padding: 14px 16px; text-align: left; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
+  .compare-table td { padding: 12px 16px; border-top: 1px solid var(--guide-border); vertical-align: top; }
+  .compare-table .label { font-weight: 600; color: #333; white-space: nowrap; }
+
+  .sub-label { font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+
+  @media (max-width: 900px) {
+    .page-header { padding: 30px 20px; }
+    .page-header h1 { font-size: 1.6rem; letter-spacing: 3px; }
+    .container { padding: 24px 14px; }
+    .option-tab { font-size: 0.7rem; padding: 12px 8px; }
+    .hero-mock { padding: 30px 24px; }
+    .hero-mock .hero-title { font-size: 1.7rem; }
+    .footer-demo { grid-template-columns: 1fr 1fr; }
+    .nav-demo .nav-items { display: none; }
+    .sw { width: 130px; }
+    .type-banner .tb-row { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Juggernaut Industries</h1>
+  <div class="subtitle">Website Design System — 3 Color Options</div>
+  <div class="type-badge">Typography · Cormorant Garamond · Montserrat · Nunito Sans</div>
+</div>
+
+<div class="container">
+
+<!-- SHARED TYPOGRAPHY BANNER -->
+<div class="type-banner">
+  <div class="tb-row">
+    <div class="tb-item">
+      <div class="tb-label">Display — Cormorant Garamond 600</div>
+      <div style="font-family:var(--font-display); font-weight:600; font-size:1.9rem; color:#2c3e50; text-transform:uppercase; letter-spacing:4px; line-height:1.15;">Juggernaut</div>
+      <div style="font-family:var(--font-heading); font-weight:300; font-size:0.82rem; color:#90a4ae; text-transform:uppercase; letter-spacing:6px; margin-top:2px;">Industries</div>
+    </div>
+    <div class="tb-item">
+      <div class="tb-label">Heading — Montserrat 700</div>
+      <div style="font-family:var(--font-heading); font-weight:700; font-size:1.15rem; color:#37474f; text-transform:uppercase; letter-spacing:1.5px;">Mining · Construction · Solar</div>
+    </div>
+    <div class="tb-item">
+      <div class="tb-label">Body — Nunito Sans 400</div>
+      <div style="font-family:var(--font-body); font-weight:400; font-size:0.95rem; color:#555; line-height:1.7;">Delivering quality services across Agriculture, Mining, Construction, and Solar Energy since 2006.</div>
+    </div>
+  </div>
+</div>
+
+<!-- OPTION TABS -->
+<div class="option-nav">
+  <button class="option-tab tab-a active" onclick="showOption('a')">Option A</button>
+  <button class="option-tab tab-b" onclick="showOption('b')">Option B</button>
+  <button class="option-tab tab-c" onclick="showOption('c')">Option C</button>
+</div>
+
+<!-- ======== OPTION A ======== -->
+<div id="panel-a" class="option-panel active">
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#E8A317;">Color Palette</div>
+    <div class="opt-section-desc">Bold, high-energy industrial palette. Deep navy base with warm amber/gold and sector-specific secondary colors.</div>
+    <div class="sub-label" style="color:#0D1B2A;">Primary</div>
+    <div class="swatches">
+      <div class="sw"><div class="sw-color" style="background:#0D1B2A;"></div><div class="sw-info"><div class="sw-name">Deep Navy</div><div class="sw-hex">#0D1B2A</div><div class="sw-role">Hero BG, headers, footer</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#1B3A5C;"></div><div class="sw-info"><div class="sw-name">Steel Blue</div><div class="sw-hex">#1B3A5C</div><div class="sw-role">Sections, cards, nav</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#E8A317;"></div><div class="sw-info"><div class="sw-name">Industrial Gold</div><div class="sw-hex">#E8A317</div><div class="sw-role">CTAs, accents</div></div></div>
+    </div>
+    <div class="sub-label" style="color:#2E7D32;">Secondary (Sector)</div>
+    <div class="swatches">
+      <div class="sw"><div class="sw-color" style="background:#2E7D32;"></div><div class="sw-info"><div class="sw-name">Mining Green</div><div class="sw-hex">#2E7D32</div><div class="sw-role">Agriculture</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#00796B;"></div><div class="sw-info"><div class="sw-name">Energy Teal</div><div class="sw-hex">#00796B</div><div class="sw-role">Solar, energy</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#BF360C;"></div><div class="sw-info"><div class="sw-name">Rust</div><div class="sw-hex">#BF360C</div><div class="sw-role">Construction</div></div></div>
+    </div>
+    <div class="sub-label" style="color:#888;">Neutrals</div>
+    <div class="swatches">
+      <div class="sw"><div class="sw-color" style="background:#111827;"></div><div class="sw-info"><div class="sw-name">Near Black</div><div class="sw-hex">#111827</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#374151;"></div><div class="sw-info"><div class="sw-name">Dark Gray</div><div class="sw-hex">#374151</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#6B7280;"></div><div class="sw-info"><div class="sw-name">Mid Gray</div><div class="sw-hex">#6B7280</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#D1D5DB;"></div><div class="sw-info"><div class="sw-name">Light Gray</div><div class="sw-hex">#D1D5DB</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#F3F4F6; border:1px solid #e5e7eb;"></div><div class="sw-info"><div class="sw-name">Off White</div><div class="sw-hex">#F3F4F6</div></div></div>
+    </div>
+  </div>
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#E8A317;">Buttons</div>
+    <div class="btn-demo">
+      <button class="d-btn" style="background:#E8A317; color:#0D1B2A;">Get a Quote</button>
+      <button class="d-btn" style="background:#0D1B2A; color:#fff;">Learn More</button>
+      <button class="d-btn" style="background:transparent; color:#0D1B2A; border:2px solid #0D1B2A;">Our Services</button>
+      <button class="d-btn" style="background:#2E7D32; color:#fff;">Sustainability</button>
+    </div>
+  </div>
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#E8A317;">Component Preview</div>
+    <div class="nav-demo" style="background:#0D1B2A; color:#fff;">
+      <div class="logo-text">Juggernaut</div>
+      <ul class="nav-items" style="color:#6B7280;"><li style="color:#E8A317;">Home</li><li>About</li><li>Services</li><li>Projects</li><li>Contact</li></ul>
+      <button class="nav-cta" style="background:#E8A317; color:#0D1B2A;">Get a Quote</button>
+    </div>
+    <div class="hero-mock" style="background:linear-gradient(135deg,#0D1B2A,#1B3A5C);">
+      <div class="hero-tag" style="color:#E8A317;">Since 2006 · Abuja, Nigeria</div>
+      <div class="hero-title">Building Africa's<br>Future Together</div>
+      <div style="width:50px; height:2px; background:#E8A317; margin-bottom:20px;"></div>
+      <div class="hero-body" style="color:rgba(255,255,255,0.6);">Delivering quality services across Agriculture, Mining, Construction, Solar Energy, and Oil & Gas.</div>
+      <div class="btn-demo">
+        <button class="d-btn" style="background:#E8A317; color:#0D1B2A;">Explore Services</button>
+        <button class="d-btn" style="background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.3);">Contact Us</button>
+      </div>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card" style="border-top:3px solid #E8A317;"><h4 style="color:#0D1B2A;">Mining</h4><p>From exploration to advanced drill-outs.</p></div>
+      <div class="srv-card" style="border-top:3px solid #2E7D32;"><h4 style="color:#0D1B2A;">Agriculture</h4><p>Production and agro-allied processing.</p></div>
+      <div class="srv-card" style="border-top:3px solid #00796B;"><h4 style="color:#0D1B2A;">Solar Energy</h4><p>Street lights and rural electrification.</p></div>
+      <div class="srv-card" style="border-top:3px solid #BF360C;"><h4 style="color:#0D1B2A;">Construction</h4><p>Engineering for govt and private sector.</p></div>
+    </div>
+    <div class="dark-block" style="background:#1B3A5C;">
+      <div class="db-line" style="background:#E8A317;"></div>
+      <h3>Our Commitment</h3>
+      <p style="color:rgba(255,255,255,0.6);">JIL has great passion and commitment to Africa and its people. We are an African company with a vision to be on the global listing of world class companies.</p>
+      <div class="btn-demo">
+        <button class="d-btn" style="background:#E8A317; color:#0D1B2A;">About JIL</button>
+        <button class="d-btn" style="background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.25);">Our Projects</button>
+      </div>
+    </div>
+    <div class="footer-demo" style="background:#0D1B2A; color:#6B7280;">
+      <div><div class="f-brand" style="color:#fff;">Juggernaut</div><div class="f-sub" style="color:#1B3A5C;">Industries Limited</div><p>Founded 2006, Abuja, Nigeria.</p></div>
+      <div><h5 style="color:#E8A317;">Services</h5><ul><li>Mining</li><li>Agriculture</li><li>Construction</li><li>Solar</li></ul></div>
+      <div><h5 style="color:#E8A317;">Company</h5><ul><li>About</li><li>Projects</li><li>Careers</li></ul></div>
+      <div><h5 style="color:#E8A317;">Contact</h5><ul><li>3 Wiser Estate</li><li>Mabushi, Abuja</li><li>FCT, Nigeria</li></ul></div>
+    </div>
+  </div>
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#E8A317;">CSS Variables</div>
+    <div class="code-block" style="background:#0D1B2A; color:#a5d6a7;"><span class="cm">/* Option A — Industrial Bold */</span>
+:root {
+  <span class="pr">--primary-dark</span>:    <span class="vl">#0D1B2A</span>;
+  <span class="pr">--primary-blue</span>:    <span class="vl">#1B3A5C</span>;
+  <span class="pr">--primary-accent</span>:  <span class="vl">#E8A317</span>;
+  <span class="pr">--green</span>:           <span class="vl">#2E7D32</span>;
+  <span class="pr">--teal</span>:            <span class="vl">#00796B</span>;
+  <span class="pr">--rust</span>:            <span class="vl">#BF360C</span>;
+  <span class="pr">--font-display</span>:    <span class="vl">'Cormorant Garamond', serif</span>;
+  <span class="pr">--font-heading</span>:    <span class="vl">'Montserrat', sans-serif</span>;
+  <span class="pr">--font-body</span>:       <span class="vl">'Nunito Sans', sans-serif</span>;
+}</div>
+  </div>
+</div>
+
+<!-- ======== OPTION B ======== -->
+<div id="panel-b" class="option-panel">
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#ffd700;">Color Palette</div>
+    <div class="opt-section-desc">Your selected 5-color scheme. Muted, authoritative grays with deep navy and a pure gold accent.</div>
+    <div class="swatches">
+      <div class="sw"><div class="sw-color" style="background:#939191;"></div><div class="sw-info"><div class="sw-name">Rosy Granite</div><div class="sw-hex">#939191</div><div class="sw-role">Captions, muted text</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#424242;"></div><div class="sw-info"><div class="sw-name">Gunmetal</div><div class="sw-hex">#424242</div><div class="sw-role">Body text, alt sections</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#526071;"></div><div class="sw-info"><div class="sw-name">Blue Slate</div><div class="sw-hex">#526071</div><div class="sw-role">Sub-heads, secondary</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#102e50;"></div><div class="sw-info"><div class="sw-name">Deep Space Blue</div><div class="sw-hex">#102e50</div><div class="sw-role">Hero, nav, footer</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#ffd700;"></div><div class="sw-info"><div class="sw-name">Gold</div><div class="sw-hex">#FFD700</div><div class="sw-role">CTAs, highlights</div></div></div>
+    </div>
+  </div>
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#ffd700;">Buttons</div>
+    <div class="btn-demo">
+      <button class="d-btn" style="background:#ffd700; color:#102e50;">Get a Quote</button>
+      <button class="d-btn" style="background:#102e50; color:#fff;">Learn More</button>
+      <button class="d-btn" style="background:#526071; color:#fff;">Our Services</button>
+      <button class="d-btn" style="background:transparent; color:#102e50; border:2px solid #102e50;">Contact</button>
+    </div>
+  </div>
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#ffd700;">Component Preview</div>
+    <div class="nav-demo" style="background:#102e50; color:#fff;">
+      <div class="logo-text">Juggernaut</div>
+      <ul class="nav-items" style="color:#939191;"><li style="color:#ffd700;">Home</li><li>About</li><li>Services</li><li>Projects</li><li>Contact</li></ul>
+      <button class="nav-cta" style="background:#ffd700; color:#102e50;">Get a Quote</button>
+    </div>
+    <div class="hero-mock" style="background:linear-gradient(135deg,#102e50,#1a3d66);">
+      <div class="hero-tag" style="color:#ffd700;">Since 2006 · Abuja, Nigeria</div>
+      <div class="hero-title">Building Africa's<br>Future Together</div>
+      <div style="width:50px; height:2px; background:#ffd700; margin-bottom:20px;"></div>
+      <div class="hero-body" style="color:#939191;">Delivering quality services across Agriculture, Mining, Construction, Solar Energy, and Oil & Gas.</div>
+      <div class="btn-demo">
+        <button class="d-btn" style="background:#ffd700; color:#102e50;">Explore Services</button>
+        <button class="d-btn" style="background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.3);">Contact Us</button>
+      </div>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card" style="border-top:3px solid #ffd700;"><h4 style="color:#102e50;">Mining</h4><p>From exploration to advanced drill-outs.</p></div>
+      <div class="srv-card" style="border-top:3px solid #ffd700;"><h4 style="color:#102e50;">Agriculture</h4><p>Production and agro-allied processing.</p></div>
+      <div class="srv-card" style="border-top:3px solid #ffd700;"><h4 style="color:#102e50;">Solar Energy</h4><p>Street lights and rural electrification.</p></div>
+      <div class="srv-card" style="border-top:3px solid #ffd700;"><h4 style="color:#102e50;">Construction</h4><p>Engineering for govt and private sector.</p></div>
+    </div>
+    <div class="dark-block" style="background:#424242;">
+      <div class="db-line" style="background:#ffd700;"></div>
+      <h3>Our Commitment</h3>
+      <p style="color:#939191;">JIL has great passion and commitment to Africa and its people. We are an African company with a vision to be on the global listing of world class companies.</p>
+      <div class="btn-demo">
+        <button class="d-btn" style="background:#ffd700; color:#102e50;">About JIL</button>
+        <button class="d-btn" style="background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.25);">Our Projects</button>
+      </div>
+    </div>
+    <div class="footer-demo" style="background:#102e50; color:#939191;">
+      <div><div class="f-brand" style="color:#fff;">Juggernaut</div><div class="f-sub" style="color:#526071;">Industries Limited</div><p>Founded 2006, Abuja, Nigeria.</p></div>
+      <div><h5 style="color:#ffd700;">Services</h5><ul><li>Mining</li><li>Agriculture</li><li>Construction</li><li>Solar</li></ul></div>
+      <div><h5 style="color:#ffd700;">Company</h5><ul><li>About</li><li>Projects</li><li>Careers</li></ul></div>
+      <div><h5 style="color:#ffd700;">Contact</h5><ul><li>3 Wiser Estate</li><li>Mabushi, Abuja</li><li>FCT, Nigeria</li></ul></div>
+    </div>
+  </div>
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#ffd700;">CSS Variables</div>
+    <div class="code-block" style="background:#102e50; color:#a5d6a7;"><span class="cm">/* Option B — General Tone */</span>
+:root {
+  <span class="pr">--rosy-granite</span>:    <span class="vl">#939191</span>;
+  <span class="pr">--gunmetal</span>:        <span class="vl">#424242</span>;
+  <span class="pr">--blue-slate</span>:      <span class="vl">#526071</span>;
+  <span class="pr">--deep-space-blue</span>: <span class="vl">#102e50</span>;
+  <span class="pr">--gold</span>:            <span class="vl">#ffd700</span>;
+  <span class="pr">--gold-dark</span>:       <span class="vl">#c9a800</span>;
+  <span class="pr">--font-display</span>:    <span class="vl">'Cormorant Garamond', serif</span>;
+  <span class="pr">--font-heading</span>:    <span class="vl">'Montserrat', sans-serif</span>;
+  <span class="pr">--font-body</span>:       <span class="vl">'Nunito Sans', sans-serif</span>;
+}</div>
+  </div>
+</div>
+
+<!-- ======== OPTION C ======== -->
+<div id="panel-c" class="option-panel">
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#546e8a;">Design Philosophy</div>
+    <div class="opt-section-desc">Directly inspired by the logo: gray globe tones, steel-blue serif letterforms, cool neutral palette. <strong>Corporate, refined, trust-first.</strong> Blue reserved for buttons only. No gold — authority through restraint.</div>
+  </div>
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#546e8a;">Color Palette</div>
+    <div class="sub-label" style="color:#2c3e50;">Brand Core (from logo)</div>
+    <div class="swatches">
+      <div class="sw"><div class="sw-color" style="background:#2c3e50;"></div><div class="sw-info"><div class="sw-name">Charcoal Navy</div><div class="sw-hex">#2C3E50</div><div class="sw-role">Hero, nav, footer, headings</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#546e8a;"></div><div class="sw-info"><div class="sw-name">Steel Blue</div><div class="sw-hex">#546E8A</div><div class="sw-role">Sub-heads, logo text</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#90a4ae;"></div><div class="sw-info"><div class="sw-name">Silver</div><div class="sw-hex">#90A4AE</div><div class="sw-role">Globe tones, captions</div></div></div>
+    </div>
+    <div class="sub-label" style="color:#3b6fa0;">Interactive / Action</div>
+    <div class="swatches">
+      <div class="sw"><div class="sw-color" style="background:#3b6fa0;"></div><div class="sw-info"><div class="sw-name">Action Blue</div><div class="sw-hex">#3B6FA0</div><div class="sw-role">Buttons, links, CTAs</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#2d5a85;"></div><div class="sw-info"><div class="sw-name">Action Blue Dark</div><div class="sw-hex">#2D5A85</div><div class="sw-role">Hover states</div></div></div>
+    </div>
+    <div class="sub-label" style="color:#888;">Neutrals</div>
+    <div class="swatches">
+      <div class="sw"><div class="sw-color" style="background:#37474f;"></div><div class="sw-info"><div class="sw-name">Dark Slate</div><div class="sw-hex">#37474F</div><div class="sw-role">Body text, alt sections</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#607d8b;"></div><div class="sw-info"><div class="sw-name">Cool Gray</div><div class="sw-hex">#607D8B</div><div class="sw-role">Secondary text</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#cfd8dc;"></div><div class="sw-info"><div class="sw-name">Mist</div><div class="sw-hex">#CFD8DC</div><div class="sw-role">Borders</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#eceff1; border:1px solid #ddd;"></div><div class="sw-info"><div class="sw-name">Cloud</div><div class="sw-hex">#ECEFF1</div><div class="sw-role">Page BG</div></div></div>
+      <div class="sw"><div class="sw-color" style="background:#fff; border:1px solid #ddd;"></div><div class="sw-info"><div class="sw-name">White</div><div class="sw-hex">#FFFFFF</div><div class="sw-role">Cards</div></div></div>
+    </div>
+  </div>
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#546e8a;">Buttons</div>
+    <div class="btn-demo">
+      <button class="d-btn" style="background:#3b6fa0; color:#fff;">Get a Quote</button>
+      <button class="d-btn" style="background:#2c3e50; color:#fff;">Learn More</button>
+      <button class="d-btn" style="background:transparent; color:#2c3e50; border:2px solid #cfd8dc;">Our Services</button>
+      <button class="d-btn" style="background:transparent; color:#3b6fa0; border:2px solid #3b6fa0;">Contact Us</button>
+    </div>
+    <div style="margin-top:16px;">
+      <div style="background:#2c3e50; border-radius:8px; padding:20px; display:inline-flex; gap:12px;">
+        <button class="d-btn" style="background:#3b6fa0; color:#fff;">Primary CTA</button>
+        <button class="d-btn" style="background:transparent; color:rgba(255,255,255,0.6); border:2px solid rgba(255,255,255,0.2);">Secondary</button>
+      </div>
+      <span style="font-size:0.72rem; color:#999; margin-left:12px;">↑ On dark backgrounds</span>
+    </div>
+  </div>
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#546e8a;">Component Preview</div>
+    <div class="nav-demo" style="background:#2c3e50; color:#fff;">
+      <div class="logo-text">Juggernaut</div>
+      <ul class="nav-items" style="color:#90a4ae;"><li style="color:#fff;">Home</li><li>About</li><li>Services</li><li>Projects</li><li>Contact</li></ul>
+      <button class="nav-cta" style="background:#3b6fa0; color:#fff;">Get a Quote</button>
+    </div>
+    <div class="hero-mock" style="background:linear-gradient(160deg,#1a2a3a 0%,#2c3e50 40%,#37474f 100%);">
+      <div style="position:absolute; top:0; right:0; bottom:0; width:40%; background:linear-gradient(180deg,rgba(84,110,138,0.06),rgba(144,164,174,0.03)); pointer-events:none;"></div>
+      <div class="hero-tag" style="color:#90a4ae;">Since 2006 · Abuja, Nigeria</div>
+      <div class="hero-title">Building Africa's<br>Future Together</div>
+      <div style="width:50px; height:2px; background:#546e8a; margin-bottom:20px;"></div>
+      <div class="hero-body" style="color:#90a4ae;">Delivering quality services across Agriculture, Mining, Construction, Solar Energy, and Oil & Gas with commitment to excellence.</div>
+      <div class="btn-demo">
+        <button class="d-btn" style="background:#3b6fa0; color:#fff;">Explore Our Services</button>
+        <button class="d-btn" style="background:transparent; color:rgba(255,255,255,0.6); border:2px solid rgba(255,255,255,0.2);">Contact Us</button>
+      </div>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card" style="border-top:3px solid #546e8a;"><h4 style="color:#2c3e50;">Mining</h4><p>From exploration to advanced drill-outs.</p><div style="margin-top:12px;"><a style="font-size:0.75rem; font-weight:700; color:#3b6fa0; text-transform:uppercase; letter-spacing:1px; cursor:pointer; font-family:var(--font-heading);">Learn More →</a></div></div>
+      <div class="srv-card" style="border-top:3px solid #546e8a;"><h4 style="color:#2c3e50;">Agriculture</h4><p>Production and agro-allied processing.</p><div style="margin-top:12px;"><a style="font-size:0.75rem; font-weight:700; color:#3b6fa0; text-transform:uppercase; letter-spacing:1px; cursor:pointer; font-family:var(--font-heading);">Learn More →</a></div></div>
+      <div class="srv-card" style="border-top:3px solid #546e8a;"><h4 style="color:#2c3e50;">Solar Energy</h4><p>Street lights and rural electrification.</p><div style="margin-top:12px;"><a style="font-size:0.75rem; font-weight:700; color:#3b6fa0; text-transform:uppercase; letter-spacing:1px; cursor:pointer; font-family:var(--font-heading);">Learn More →</a></div></div>
+      <div class="srv-card" style="border-top:3px solid #546e8a;"><h4 style="color:#2c3e50;">Construction</h4><p>Engineering for govt and private sector.</p><div style="margin-top:12px;"><a style="font-size:0.75rem; font-weight:700; color:#3b6fa0; text-transform:uppercase; letter-spacing:1px; cursor:pointer; font-family:var(--font-heading);">Learn More →</a></div></div>
+    </div>
+    <div class="dark-block" style="background:#37474f;">
+      <div class="db-line" style="background:#546e8a;"></div>
+      <h3>Our Commitment</h3>
+      <p style="color:#90a4ae;">JIL has great passion and commitment to Africa and its people. We are an African company with a vision to be on the global listing of world class companies.</p>
+      <div class="btn-demo">
+        <button class="d-btn" style="background:#3b6fa0; color:#fff;">About JIL</button>
+        <button class="d-btn" style="background:transparent; color:rgba(255,255,255,0.5); border:2px solid rgba(255,255,255,0.2);">Our Projects</button>
+      </div>
+    </div>
+    <div class="footer-demo" style="background:#2c3e50; color:#90a4ae;">
+      <div><div class="f-brand" style="color:#fff;">Juggernaut</div><div class="f-sub" style="color:#546e8a;">Industries Limited</div><p>Founded 2006, Abuja, Nigeria.</p></div>
+      <div><h5 style="color:#546e8a;">Services</h5><ul><li>Mining</li><li>Agriculture</li><li>Construction</li><li>Solar</li></ul></div>
+      <div><h5 style="color:#546e8a;">Company</h5><ul><li>About</li><li>Projects</li><li>Careers</li></ul></div>
+      <div><h5 style="color:#546e8a;">Contact</h5><ul><li>3 Wiser Estate</li><li>Mabushi, Abuja</li><li>FCT, Nigeria</li></ul></div>
+    </div>
+  </div>
+  <div class="opt-section">
+    <div class="opt-section-title" style="color:#546e8a;">CSS Variables</div>
+    <div class="code-block" style="background:#2c3e50; color:#a5d6a7;"><span class="cm">/* Option C — Logo-Inspired Neutrals */</span>
+:root {
+  <span class="pr">--charcoal-navy</span>:   <span class="vl">#2c3e50</span>;
+  <span class="pr">--steel-blue</span>:      <span class="vl">#546e8a</span>;
+  <span class="pr">--silver</span>:          <span class="vl">#90a4ae</span>;
+  <span class="pr">--action-blue</span>:     <span class="vl">#3b6fa0</span>;
+  <span class="pr">--action-blue-dk</span>:  <span class="vl">#2d5a85</span>;
+  <span class="pr">--dark-slate</span>:      <span class="vl">#37474f</span>;
+  <span class="pr">--cool-gray</span>:       <span class="vl">#607d8b</span>;
+  <span class="pr">--mist</span>:            <span class="vl">#cfd8dc</span>;
+  <span class="pr">--cloud</span>:           <span class="vl">#eceff1</span>;
+  <span class="pr">--font-display</span>:    <span class="vl">'Cormorant Garamond', serif</span>;
+  <span class="pr">--font-heading</span>:    <span class="vl">'Montserrat', sans-serif</span>;
+  <span class="pr">--font-body</span>:       <span class="vl">'Nunito Sans', sans-serif</span>;
+}</div>
+  </div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<table class="compare-table">
+  <thead>
+    <tr>
+      <th style="background:#333; color:#fff; width:140px;">Aspect</th>
+      <th style="background:#0D1B2A; color:#E8A317;">A · Industrial Bold</th>
+      <th style="background:#102e50; color:#ffd700;">B · General Tone</th>
+      <th style="background:#2c3e50; color:#90a4ae;">C · Logo-Inspired</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="label">Typography</td><td colspan="3" style="text-align:center; color:#546e8a; font-weight:600;">Cormorant Garamond · Montserrat · Nunito Sans</td></tr>
+    <tr><td class="label">Mood</td><td>Bold, energetic, multi-sector</td><td>Authoritative, muted, gold-focused</td><td>Refined, corporate, understated</td></tr>
+    <tr><td class="label">CTA Color</td><td style="color:#E8A317; font-weight:600;">#E8A317 Warm Gold</td><td style="color:#c9a800; font-weight:600;">#FFD700 Pure Gold</td><td style="color:#3b6fa0; font-weight:600;">#3B6FA0 Blue</td></tr>
+    <tr><td class="label">Primary BG</td><td style="color:#0D1B2A; font-weight:600;">#0D1B2A Deep Navy</td><td style="color:#102e50; font-weight:600;">#102E50 Deep Space</td><td style="color:#2c3e50; font-weight:600;">#2C3E50 Charcoal</td></tr>
+    <tr><td class="label">Color Count</td><td>8 (incl. sector colors)</td><td>5 colors</td><td>10 (mostly neutral)</td></tr>
+    <tr><td class="label">Logo Match</td><td>Tones differ</td><td>Tones close</td><td>Closest to logo</td></tr>
+    <tr><td class="label">Best For</td><td>Marketing, new clients</td><td>General-purpose rebrand</td><td>Govt/enterprise trust</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+function showOption(opt) {
+  document.querySelectorAll('.option-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.option-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + opt).classList.add('active');
+  document.querySelector('.tab-' + opt).classList.add('active');
+}
+</script>
+</body>
+</html>

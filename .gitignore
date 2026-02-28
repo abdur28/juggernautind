@@ -2,6 +2,16 @@
 
 # dependencies
 /node_modules
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# AI / Dev Tools
+.claude/
+.adal/
+.agents/
+.kiro/
 /.pnp
 .pnp.*
 .yarn/*
@@ -39,3 +49,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/claude
+/kiro
+/adal
+/agents
+/my-skills
