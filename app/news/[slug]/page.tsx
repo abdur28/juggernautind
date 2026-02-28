@@ -27,6 +27,7 @@ export default function NewsArticlePage({ params }: { params: Promise<{ slug: st
     <>
       {/* Page Header */}
       <PageHeader
+        className='h-[70vh] md:h-[60vh] lg:h-[50vh]'
         title={article.title}
         subtitle={article.excerpt}
         breadcrumbs={[

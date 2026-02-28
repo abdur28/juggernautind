@@ -57,7 +57,7 @@ export const navigation = {
     { label: 'Projects', href: '/projects' },
     {
       label: 'Media',
-      href: '/media',
+      href: '/media/gallery',
       submenu: [
         { label: 'Image Gallery', href: '/media/gallery', description: 'Project photos & highlights' },
         { label: 'Video Gallery', href: '/media/videos', description: 'Video documentation' },

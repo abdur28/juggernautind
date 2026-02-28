@@ -38,6 +38,7 @@ export default function ServiceDetailPage() {
     <>
       {/* Page Header */}
       <PageHeader
+        className='h-[70vh] md:h-[60vh] lg:h-[50vh]'
         title={service.title.toUpperCase()}
         subtitle={service.description}
         breadcrumbs={[
