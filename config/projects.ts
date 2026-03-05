@@ -45,7 +45,7 @@ export const projects: Project[] = [
     fullDescription:
       'Juggernaut Industries successfully completed the installation of a Barite processing plant in the South-South region of Nigeria. This project aligns with the Federal Government vision to rapidly develop and support locally made Nigerian goods, contributing to the nation\'s industrial growth and self-sufficiency.',
     services: ['Plant Installation', 'Equipment Setup', 'Process Engineering', 'Commissioning'],
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop',
+    image: '/construction.jpg',
     href: '/projects/ministry-solid-minerals',
   },
   {
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     fullDescription:
       'Juggernaut Industries is currently conducting grade control operations with its partners for Segilola, Nigeria\'s only large scale producing gold mine. This historic project represents a significant milestone in Nigeria\'s mining industry, and JIL is proud to be providing essential services on this landmark project.',
     services: ['Grade Control', 'Drilling Services', 'Sample Analysis', 'Quality Assurance'],
-    image: 'https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?q=80&w=2070&auto=format&fit=crop',
+    image: '/mining-1.jpeg',
     href: '/projects/segilola',
   },
   {
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     fullDescription:
       'Juggernaut Industries is currently carrying out drilling services for lithium exploration in partnership with Newstar Minerals Ltd (Thor Explorations) in their West Oyo Project Area. This project positions JIL at the forefront of Nigeria\'s emerging battery minerals sector.',
     services: ['Exploration Drilling', 'Core Sampling', 'Geological Mapping', 'Resource Assessment'],
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop',
+    image: '/mining-2.jpeg',
     href: '/projects/newstar-thor',
   },
 ];

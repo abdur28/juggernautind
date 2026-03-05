@@ -17,6 +17,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 
+import { toast } from 'sonner';
+
 export default function CareersPage() {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -32,9 +34,58 @@ export default function CareersPage() {
     cv: null as File | null,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Application submitted:', formData);
+    setIsSubmitting(true);
+
+    try {
+      const data = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        if (value !== null) {
+          data.append(key, value);
+        }
+      });
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        body: data, // Using FormData for file upload
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit application');
+      }
+
+      toast.success(result.message || 'Application submitted successfully!');
+      
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        address: '',
+        gender: '',
+        education: '',
+        position: '',
+        recentRole: '',
+        message: '',
+        cv: null,
+      });
+
+    // Need to reset the file input manually
+      const fileInput = document.getElementById('cv') as HTMLInputElement;
+      if (fileInput) fileInput.value = '';
+
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'An error occurred while submitting.');
+      console.error('Careers form error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -518,10 +569,11 @@ export default function CareersPage() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-industrial-gold text-near-black font-heading text-xs tracking-[0.1em] uppercase rounded-xl btn-animated relative z-1 overflow-hidden after:bg-steel-blue hover:text-off-white transition-colors"
+                    disabled={isSubmitting}
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-industrial-gold text-near-black font-heading text-xs tracking-[0.1em] uppercase rounded-xl btn-animated relative z-1 overflow-hidden after:bg-steel-blue hover:text-off-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Submit Application
-                    <Briefcase className="w-4 h-4" />
+                    {isSubmitting ? 'Submitting Application...' : 'Submit Application'}
+                    {!isSubmitting && <Briefcase className="w-4 h-4" />}
                   </button>
                 </form>
               </div>

@@ -262,7 +262,7 @@ export const services: Service[] = [
         description: 'Contributing to sustainable development across Nigeria.',
       },
     ],
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop',
+    image: '/construction.jpg',
   },
   {
     id: 'solar',
@@ -301,7 +301,7 @@ export const services: Service[] = [
         description: 'Install different capacity transformers based on project requirements.',
       },
     ],
-    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop',
+    image: '/solar_installation.jpg',
   },
   {
     id: 'oilgas',
@@ -340,7 +340,7 @@ export const services: Service[] = [
         description: 'Strict safety compliance in all our oil and gas activities.',
       },
     ],
-    image: 'https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=2070&auto=format&fit=crop',
+    image: '/drilling.jpg',
   },
 ];
 

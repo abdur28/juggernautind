@@ -140,7 +140,7 @@ export default function OurStoryPage() {
               <div className="sticky top-24">
                 <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/construction.jpg"
+                    src="/mining-1.jpeg"
                     alt="Juggernaut Industries mining site"
                     fill
                     className="object-cover"

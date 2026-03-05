@@ -3,6 +3,8 @@ import { fontVariables } from "@/lib/fonts";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { SmoothScrollProvider } from "@/components/animations/smooth-scroll";
+import { OrganizationJsonLd, LocalBusinessJsonLd } from "@/components/seo/json-ld";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -35,20 +37,11 @@ export const metadata: Metadata = {
     title: "Juggernaut Industries Limited | Building Africa's Future",
     description:
       "A Nigerian company with a vision to be on the global listing of world class companies. Services in Mining, Agriculture, Construction, Solar Energy, and Oil & Gas.",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Juggernaut Industries Limited",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Juggernaut Industries Limited",
     description: "Building Africa's Future Together since 2006",
-    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -76,11 +69,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${fontVariables} antialiased bg-deep-navy text-off-white`}>
+        <OrganizationJsonLd />
+        <LocalBusinessJsonLd />
         <SmoothScrollProvider>
           <Header />
           <main>{children}</main>
           <Footer />
         </SmoothScrollProvider>
+        <Toaster position="top-center" />
       </body>
     </html>
   );

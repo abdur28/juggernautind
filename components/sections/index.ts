@@ -7,3 +7,4 @@ export * from './services-asymmetric';
 export * from './projects-carousel';
 export * from './news-section';
 export * from './cta-section';
+export * from './hse-policy-section';

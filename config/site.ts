@@ -89,6 +89,7 @@ export const navigation = {
     legal: [
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms of Service', href: '/terms' },
+      { label: 'HSE Policy', href: '/hse-policy' },
     ],
   },
 };
@@ -167,5 +168,24 @@ export const heroThumbnails = [
   {
     src: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=400',
     alt: 'Laboratory analysis',
+  },
+];
+
+export const galleryThumbnails = [
+  {
+    id: 1,
+    src: '/mining-1.jpeg',
+  },
+  {
+    id: 2,
+    src: '/mining-2.jpeg',
+  },
+  {
+    id: 3,
+    src: '/mining-3.jpeg',
+  },
+  {
+    id: 4,
+    src: '/Agriculture.jpg',
   },
 ];

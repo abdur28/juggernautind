@@ -8,45 +8,27 @@ export default function VideosPage() {
   const videos = [
     {
       id: 1,
-      youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-      title: 'Mining Operations Overview',
+      src: '/mining-video.mp4',
+      title: 'Industrial Mining Overview',
       category: 'Mining & Exploration',
-      description: 'Discover our state-of-the-art mining operations and exploration techniques.',
+      description: 'An in-depth look at our comprehensive mining operations and heavy machinery.',
+      type: 'local',
     },
     {
       id: 2,
-      youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-      title: 'Agricultural Innovation',
-      category: 'Agriculture',
-      description: 'See how we are transforming agriculture with modern farming techniques.',
+      src: '/mining-video-1.mp4',
+      title: 'Exploration Techniques',
+      category: 'Mining & Exploration',
+      description: 'Showcasing our advanced mineral exploration and site preparation workflows.',
+      type: 'local',
     },
     {
       id: 3,
-      youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-      title: 'Construction Excellence',
-      category: 'Construction',
-      description: 'Our commitment to building Nigeria\'s infrastructure with quality and precision.',
-    },
-    {
-      id: 4,
-      youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-      title: 'Solar Energy Solutions',
-      category: 'Solar & Renewable Energy',
-      description: 'Leading the way in renewable energy and sustainable power solutions.',
-    },
-    {
-      id: 5,
-      youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-      title: 'Company Culture & Values',
-      category: 'About Us',
-      description: 'Meet our team and learn about the values that drive our success.',
-    },
-    {
-      id: 6,
-      youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video IDs
-      title: 'Safety & Compliance',
-      category: 'Operations',
-      description: 'Our dedication to maintaining the highest safety standards across all projects.',
+      src: '/mining-video-2.mp4',
+      title: 'Site Operations',
+      category: 'Mining & Exploration',
+      description: 'Real-time footage from our active project sites across the region.',
+      type: 'local',
     },
   ];
 
@@ -84,13 +66,12 @@ export default function VideosPage() {
               <ScrollReveal key={video.id} animation="fadeUp" delay={0.1 * (index % 2)}>
                 <div className="group rounded-xl overflow-hidden bg-white/40 backdrop-blur-xl border border-white/60 hover:border-industrial-gold/50 transition-all duration-300 shadow-lg hover:shadow-2xl">
                   {/* Video Embed */}
-                  <div className="relative aspect-video">
-                    <iframe
-                      src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full"
+                  <div className="relative aspect-video bg-black flex items-center justify-center">
+                    <video
+                      src={video.src}
+                      className="w-full h-full"
+                      controls
+                      poster="/mining-video-poster.jpg" // Fallback poster if needed
                     />
                   </div>
 
@@ -131,14 +112,15 @@ export default function VideosPage() {
             </ScrollReveal>
 
             <ScrollReveal animation="fadeUp" delay={0.1}>
-              <div className="rounded-xl overflow-hidden shadow-2xl">
+              <div className="rounded-xl overflow-hidden shadow-2xl bg-black">
                 <div className="relative aspect-video">
-                  <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Juggernaut Industries - Our Story"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="absolute inset-0 w-full h-full"
+                  <video
+                    src="/mining-video.mp4"
+                    className="w-full h-full"
+                    controls
+                    autoPlay
+                    muted
+                    loop
                   />
                 </div>
               </div>

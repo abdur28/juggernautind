@@ -95,7 +95,7 @@ export function IntroBlend({ className }: IntroBlendProps) {
           <ScrollReveal animation="fadeUp">
             <div className="relative aspect-square w-full md:h-[500px] lg:h-full rounded-xl overflow-hidden">
               <Image
-                src="/story.jpg"
+                src="/mining-1.jpeg"
                 alt="Mining exploration site"
                 fill
                 className="object-cover"
