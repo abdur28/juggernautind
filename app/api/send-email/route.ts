@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendContactFormEmail, sendCareerApplicationEmail, sendContactConfirmationEmail, sendCareerConfirmationEmail } from '@/lib/email';
+import { 
+  sendContactFormEmail, 
+  sendCareerApplicationEmail, 
+  sendContactConfirmationEmail, 
+  sendCareerConfirmationEmail,
+  sendNewsletterSubscriptionEmail
+} from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -7,6 +13,7 @@ export async function POST(request: NextRequest) {
 
     // ─── Career form (multipart/form-data with file upload) ───
     if (contentType.includes('multipart/form-data')) {
+      // ... (rest of the career form logic remains the same)
       const formData = await request.formData();
 
       const firstName = formData.get('firstName') as string;
@@ -69,10 +76,42 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // ─── Contact form (JSON) ───
+    // ─── Contact or Newsletter form (JSON) ───
     const body = await request.json();
     const { name, email, phone, company, service, message, formType } = body;
 
+    // Handle Newsletter Subscription
+    if (formType === 'newsletter') {
+      if (!email) {
+        return NextResponse.json(
+          { error: 'Email is required for subscription.' },
+          { status: 400 }
+        );
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return NextResponse.json(
+          { error: 'Invalid email format.' },
+          { status: 400 }
+        );
+      }
+
+      const sent = await sendNewsletterSubscriptionEmail(email);
+
+      if (!sent) {
+        return NextResponse.json(
+          { error: 'Failed to subscribe. Please try again later.' },
+          { status: 500 }
+        );
+      }
+
+      return NextResponse.json(
+        { success: true, message: 'Thank you for subscribing to our newsletter!' },
+        { status: 200 }
+      );
+    }
+
+    // Handle Contact Form (Default)
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'Missing required fields: name, email, and message.' },
@@ -111,3 +150,4 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+

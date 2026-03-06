@@ -308,3 +308,39 @@ export async function sendCareerConfirmationEmail(email: string, firstName: stri
     html: buildEmailHtml({ title: 'Application Received', body }),
   });
 }
+
+/**
+ * Send a newsletter subscription confirmation and admin notification
+ */
+export async function sendNewsletterSubscriptionEmail(email: string): Promise<boolean> {
+  // 1. Send confirmation to subscriber
+  const subscriberBody = `
+    <p>Dear Subscriber,</p>
+    <p>Thank you for subscribing to the Juggernaut Industries newsletter!</p>
+    <p>You'll now be among the first to receive updates on our latest projects, industry insights, and company news.</p>
+    <p>If you didn't mean to subscribe, you can ignore this email or contact us to be removed from the list.</p>
+    <p>Best regards,<br>The Juggernaut Industries Team</p>
+  `;
+
+  const subscriberSent = await sendEmail({
+    to: email,
+    subject: 'Welcome to Juggernaut Industries Newsletter',
+    html: buildEmailHtml({ title: 'Subscription Confirmed', body: subscriberBody }),
+  });
+
+  // 2. Send notification to admin
+  const adminBody = `
+    <p>A new user has subscribed to the newsletter:</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p>This user subscribed via the CTA section on the website.</p>
+  `;
+
+  await sendEmail({
+    to: 'info@juggernautind.com',
+    subject: `New Newsletter Subscriber: ${email}`,
+    html: buildEmailHtml({ title: 'New Newsletter Subscription', body: adminBody }),
+  });
+
+  return subscriberSent;
+}
+
