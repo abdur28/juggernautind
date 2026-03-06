@@ -119,7 +119,7 @@ export function ServicesAsymmetric({ className }: ServicesAsymmetricProps) {
               <div className="sticky top-24">
                 <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop"
+                    src="/survey-4.jpg"
                     alt="Industrial mining operation"
                     fill
                     className="object-cover"

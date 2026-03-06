@@ -411,6 +411,43 @@ export default function ServiceDetailPage() {
         </section>
       )}
 
+      {/* Operational Showcase Gallery (for services with multiple images) */}
+      {service.images && service.images.length > 0 && (
+        <section className="relative py-14 overflow-hidden bg-white">
+          <div className="container-jil relative z-10">
+            {/* Section Header */}
+            <ScrollReveal animation="fadeUp">
+              <div className="mb-12 md:mb-16 text-center">
+                <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold mb-4">
+                  <span className="w-8 h-px bg-industrial-gold" />
+                  Operational Showcase
+                </span>
+                <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-deep-navy">
+                  {service.shortTitle.toUpperCase()} IN ACTION
+                </h2>
+              </div>
+            </ScrollReveal>
+
+            {/* Gallery Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {service.images.map((image, index) => (
+                <ScrollReveal key={index} animation="fadeUp" delay={0.05 * index}>
+                  <div className="relative group aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-steel-blue/10">
+                    <Image
+                      src={image}
+                      alt={`${service.shortTitle} operational image ${index + 1}`}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/40 via-transparent to-transparent" />
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Service Navigation */}
       <section className="relative py-14 overflow-hidden bg-deep-navy">
         {/* Background Pattern */}

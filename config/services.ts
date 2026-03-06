@@ -24,6 +24,7 @@ export interface Service {
   features: string[];
   highlights?: ServiceHighlight[];
   image: string;
+  images?: string[];
 }
 
 // Mining exploration services from PDF
@@ -184,7 +185,8 @@ export const services: Service[] = [
         description: 'International team of experienced personnel representing diverse cultures.',
       },
     ],
-    image: '/mining.jpg',
+    image: '/survey-8.jpg',
+    images: ['/survey-8.jpg', '/survey-9.jpg', '/mineral.jpg', '/mineral-2.jpg'],
   },
   {
     id: 'agriculture',
@@ -223,7 +225,8 @@ export const services: Service[] = [
         description: 'Invested in tractors, threshers, and weeders for enhanced performance.',
       },
     ],
-    image: '/agriculture.jpg',
+    image: '/farming-1.jpg',
+    images: ['/farming-1.jpg', '/farmers.jpg', '/oil_palm.jpg'],
   },
   {
     id: 'construction',
@@ -340,7 +343,8 @@ export const services: Service[] = [
         description: 'Strict safety compliance in all our oil and gas activities.',
       },
     ],
-    image: '/drilling.jpg',
+    image: '/drilling-2.jpg',
+    images: ['/drilling-2.jpg', '/drill-rig.jpg', '/site-prep.jpg'],
   },
 ];
 

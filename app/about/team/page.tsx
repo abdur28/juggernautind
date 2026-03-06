@@ -42,7 +42,7 @@ export default function TeamPage() {
           { label: 'About', href: '/about' },
           { label: 'Team', href: '/about/team' },
         ]}
-        backgroundImage="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2074&auto=format&fit=crop"
+        backgroundImage="/team-group.jpg"
       />
 
       {/* Team Intro Section - Content Left, Image Right */}

@@ -58,8 +58,8 @@ export function CTASection({ className }: CTASectionProps) {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
-          alt="Modern office building"
+          src="/conference.jpg"
+          alt="JIL Conference"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-deep-navy/95 via-deep-navy/90 to-near-black" />

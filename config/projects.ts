@@ -12,6 +12,7 @@ export interface Project {
   fullDescription: string;
   services: string[];
   image: string;
+  images?: string[];
   href: string;
 }
 
@@ -29,7 +30,8 @@ export const projects: Project[] = [
     fullDescription:
       'Juggernaut Industries was appointed as consultants by the Nigerian Geological Survey Agency (NGSA) for comprehensive geological enhancement and development services. Our team conducted extensive surveys and analysis for Lead, Zinc, Silver, and Gold deposits, contributing to the national mineral resource database.',
     services: ['Geological Survey', 'Mineral Analysis', 'Resource Development', 'Technical Consulting'],
-    image: '/mining.jpg',
+    image: '/survey.jpg',
+    images: ['/survey.jpg', '/survey-1.jpg', '/survey-2.jpg'],
     href: '/projects/ngsa',
   },
   {
@@ -61,7 +63,8 @@ export const projects: Project[] = [
     fullDescription:
       'Juggernaut Industries successfully completed the Lead, Zinc and Silver exploration program on the Benue trough for the Ministry of Mines and Steel Development in Nigeria. This comprehensive project included Desktop Study, Soil Mapping, Geo-Physics and RC Drilling, establishing JIL as the first contractor under the NIMEP programme.',
     services: ['Desktop Study', 'Soil Mapping', 'Geo-Physics', 'RC Drilling', 'Data Analysis'],
-    image: '/drilling.jpg',
+    image: '/survey-4.jpg',
+    images: ['/survey-4.jpg', '/survey-5.jpg', '/survey-6.jpg', '/survey-7.jpg'],
     href: '/projects/nimep',
   },
   {

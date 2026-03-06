@@ -19,7 +19,7 @@ export default function NewsPage() {
           { label: 'Home', href: '/' },
           { label: 'News', href: '/news' },
         ]}
-        backgroundImage="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop"
+        backgroundImage="/conference.jpg"
       />
 
       {/* News Grid */}

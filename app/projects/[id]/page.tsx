@@ -196,6 +196,46 @@ export default function ProjectDetailPage() {
         </div>
       </section>
 
+      {/* Project Gallery Section */}
+      {project.images && project.images.length > 0 && (
+        <section className="relative py-14 overflow-hidden bg-white">
+          <div className="container-jil relative z-10">
+            {/* Section Header */}
+            <ScrollReveal animation="fadeUp">
+              <div className="mb-12 md:mb-16 text-center">
+                <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold mb-4">
+                  <span className="w-8 h-px bg-industrial-gold" />
+                  Site Documentation
+                </span>
+                <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-deep-navy">
+                  PROJECT GALLERY
+                </h2>
+              </div>
+            </ScrollReveal>
+
+            {/* Gallery Grid */}
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+              {project.images.map((image, index) => (
+                <ScrollReveal key={index} animation="fadeUp" delay={0.05 * index}>
+                  <div className="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500">
+                    <div className="relative aspect-[4/3] md:aspect-auto">
+                      <Image
+                        src={image}
+                        alt={`${project.title} gallery image ${index + 1}`}
+                        width={800}
+                        height={600}
+                        className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Project Navigation */}
       <section className="relative py-14 overflow-hidden bg-deep-navy">
         {/* Background Pattern */}

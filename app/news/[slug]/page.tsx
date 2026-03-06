@@ -146,8 +146,46 @@ export default function NewsArticlePage({ params }: { params: Promise<{ slug: st
               )}
             </div>
           </div>
+
+          {/* Field Gallery Section (Only if multiple images exist) */}
+          {article.images && article.images.length > 1 && (
+            <div className="mt-20">
+              <ScrollReveal animation="fadeUp">
+                <div className="mb-10 text-center">
+                  <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold mb-4">
+                    <span className="w-8 h-px bg-industrial-gold" />
+                    Field Gallery
+                  </span>
+                  <h2 className="font-display text-3xl md:text-4xl font-light text-deep-navy">
+                    Operational Showcase
+                  </h2>
+                </div>
+              </ScrollReveal>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {article.images.map((image, index) => (
+                  <ScrollReveal
+                    key={index}
+                    animation="fadeUp"
+                    delay={0.1 * (index % 3)}
+                  >
+                    <div className="group relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                      <Image
+                        src={image}
+                        alt={`${article.title} - Image ${index + 1}`}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
+
 
       {/* Related Articles */}
       {relatedArticles.length > 0 && (

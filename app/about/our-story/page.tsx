@@ -60,7 +60,7 @@ export default function OurStoryPage() {
           { label: 'About', href: '/about' },
           { label: 'Our Story', href: '/about/our-story' },
         ]}
-        backgroundImage="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop"
+        backgroundImage="/solarfarm.jpg"
       />
 
       {/* Story Intro Section - Content Left, Image Right */}

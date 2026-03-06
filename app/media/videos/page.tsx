@@ -40,10 +40,9 @@ export default function VideosPage() {
         subtitle="Watch our video collection showcasing projects, operations, and the impact we're making across Nigeria."
         breadcrumbs={[
           { label: 'Home', href: '/' },
-          { label: 'Media', href: '/media/videos' },
           { label: 'Videos', href: '/media/videos' },
         ]}
-        backgroundImage="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?q=80&w=2149&auto=format&fit=crop"
+        backgroundImage="/conference.jpg"
       />
 
       {/* Videos Section */}
@@ -71,7 +70,7 @@ export default function VideosPage() {
                       src={video.src}
                       className="w-full h-full"
                       controls
-                      poster="/mining-video-poster.jpg" // Fallback poster if needed
+                      poster="/mining-1.jpeg" // Valid local fallback
                     />
                   </div>
 

@@ -56,7 +56,7 @@ export function PageHeader({
         {/* Breadcrumbs */}
         <nav className="flex items-center justify-center gap-2 mb-6 max-w-4xl mx-auto">
           {breadcrumbs.map((crumb, index) => (
-            <div key={crumb.href} className="flex items-center gap-2 min-w-0">
+            <div key={`${crumb.href}-${index}`} className="flex items-center gap-2 min-w-0">
               {index > 0 && <ChevronRight className="w-4 h-4 text-off-white/40 flex-shrink-0" />}
               <Link
                 href={crumb.href}
