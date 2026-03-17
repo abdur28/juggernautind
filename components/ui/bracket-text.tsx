@@ -70,37 +70,10 @@ export function BracketText({
 
   // Full-width bracket design (like Horizon Grove)
   if (isFullWidth) {
-    const BracketLeft = () => (
-      <div className="flex flex-col flex-1">
-        {/* Top horizontal line */}
-        <div className={cn('h-px w-full', colors.line)} />
-        {/* Spacer */}
-        <div className="flex-1" />
-        {/* Bottom horizontal line */}
-        <div className={cn('h-px w-full', colors.line)} />
-      </div>
-    );
-
-    const BracketRight = () => (
-      <div className="flex flex-col flex-1">
-        {/* Top horizontal line */}
-        <div className={cn('h-px w-full', colors.line)} />
-        {/* Spacer */}
-        <div className="flex-1" />
-        {/* Bottom horizontal line */}
-        <div className={cn('h-px w-full', colors.line)} />
-      </div>
-    );
 
     if (!animate) {
       return (
         <div className={cn('flex items-stretch w-full', className)}>
-          {/* Left Bracket [ */}
-          <div className="flex flex-1">
-            <div className={cn('w-1 md:w-1.5 bg-white/20', bracketClassName)} />
-            <BracketLeft />
-          </div>
-
           {/* Center Text */}
           <div
             className={cn(
@@ -112,11 +85,6 @@ export function BracketText({
             {children}
           </div>
 
-          {/* Right Bracket ] */}
-          <div className="flex flex-1">
-            <BracketRight />
-            <div className={cn('w-1 md:w-1.5 bg-white/20', bracketClassName)} />
-          </div>
         </div>
       );
     }
@@ -130,21 +98,6 @@ export function BracketText({
         className="w-full"
       >
         <div className={cn('flex items-stretch w-full', className)}>
-          {/* Left Bracket [ - Animated */}
-          <motion.div
-            className="flex flex-1"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className={cn('w-1', colors.line, bracketClassName)} />
-            <div className="flex flex-col flex-1">
-              <div className={cn('h-1 w-2', colors.line)} />
-              <div className="flex-1" />
-              <div className={cn('h-1 w-2', colors.line)} />
-            </div>
-          </motion.div>
 
           {/* Center Text - Animated */}
           <motion.div
@@ -161,21 +114,6 @@ export function BracketText({
             {children}
           </motion.div>
 
-          {/* Right Bracket ] - Animated */}
-          <motion.div
-            className="flex flex-1"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className="flex flex-col items-end flex-1">
-              <div className={cn('h-1 w-2', colors.line)} />
-              <div className="flex-1" />
-              <div className={cn('h-1 w-2', colors.line)} />
-            </div>
-            <div className={cn('w-1', colors.line, bracketClassName)} />
-          </motion.div>
         </div>
       </motion.div>
     );

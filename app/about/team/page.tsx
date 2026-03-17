@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PageHeader } from '@/components/ui/page-header';
 import { GoldDot } from '@/components/ui/gold-dot';
-import { BracketText } from '@/components/ui/bracket-text';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
 import { ArrowRight } from 'lucide-react';
 
@@ -70,41 +69,18 @@ export default function TeamPage() {
               {/* Description */}
               <ScrollReveal animation="fadeUp" delay={0.1}>
                 <p className="text-steel-blue leading-relaxed text-lg">
-                  At Juggernaut Industries, we have assembled a <strong className="text-deep-navy">world class team</strong> with
-                  experience in the African terrain which helps serve our esteemed customers.
+                  Juggernaut Industries Limited is driven by a world-class team of dedicated professionals with deep experience across the African continent. Our people bring together diverse cultural perspectives and specialised expertise, equipping the company to navigate complex terrains and deliver consistently across challenging environments.
                 </p>
               </ScrollReveal>
 
               <ScrollReveal animation="fadeUp" delay={0.15}>
                 <p className="text-steel-blue leading-relaxed">
-                  Our proven local expertise has an international team of experienced personnel
-                  representing a range of different cultures, enabling us to adapt and work anywhere.
-                  We invest in highly skilled qualified personnel because we believe our people are
-                  our greatest asset.
+                  We invest in highly skilled and qualified personnel because we believe our people are our greatest asset — and it is this commitment to talent that underpins every project we undertake and every client relationship we build.
                 </p>
               </ScrollReveal>
 
               {/* Divider */}
               <div className="h-px bg-steel-blue/20" />
-
-              {/* Team Highlights */}
-              <ScrollReveal animation="fadeUp" delay={0.2}>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    'Experienced professionals',
-                    'Multicultural team',
-                    'Continuous training',
-                    'Safety certified',
-                    'Industry experts',
-                    'Client focused',
-                  ].map((highlight, index) => (
-                    <div key={index} className="flex items-center gap-2 text-sm text-steel-blue">
-                      <GoldDot size="sm" />
-                      <span>{highlight}</span>
-                    </div>
-                  ))}
-                </div>
-              </ScrollReveal>
             </div>
 
             {/* Right - Sticky Image */}
@@ -138,11 +114,12 @@ export default function TeamPage() {
           />
         </div>
 
-        {/* Bracket Text Header */}
-        <div className="px-4 md:px-8 lg:px-12 mb-12 md:mb-16">
-          <BracketText size="full" variant="light">
-            EXECUTIVE TEAM
-          </BracketText>
+        <div className="container-jil mb-12 md:mb-16">
+          <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold mb-3">
+            <span className="w-8 h-px bg-industrial-gold" />
+            Our People
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl font-light text-deep-navy">EXECUTIVE TEAM</h2>
         </div>
 
         <div className="container-jil relative z-10">

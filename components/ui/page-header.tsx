@@ -78,12 +78,6 @@ export function PageHeader({
           {title}
         </h1>
 
-        {/* Subtitle */}
-        {subtitle && (
-          <p className="text-light-gray text-lg md:text-xl max-w-2xl mx-auto">
-            {subtitle}
-          </p>
-        )}
       </div>
     </section>
   );

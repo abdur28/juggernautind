@@ -255,10 +255,9 @@ export default function ContactPage() {
                         </SelectTrigger>
                         <SelectContent className="bg-white border border-steel-blue/20 rounded-xl shadow-lg">
                           <SelectItem value="mining" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Mining & Exploration</SelectItem>
-                          <SelectItem value="agriculture" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Agriculture</SelectItem>
+                          <SelectItem value="agriculture" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Agriculture & Agro-Processing</SelectItem>
                           <SelectItem value="construction" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Construction</SelectItem>
-                          <SelectItem value="solar" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Solar & Renewable Energy</SelectItem>
-                          <SelectItem value="oil-gas" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Oil & Gas Services</SelectItem>
+                          <SelectItem value="solar" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Renewable Energy</SelectItem>
                           <SelectItem value="other" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Other</SelectItem>
                         </SelectContent>
                       </Select>

@@ -5,7 +5,7 @@ export interface NewsArticle {
   title: string;
   slug: string;
   excerpt: string;
-  category: 'Mining & Exploration' | 'Agriculture' | 'Construction' | 'Solar & Renewable Energy' | 'Oil & Gas' | 'Company News';
+  category: 'Mining & Exploration' | 'Agriculture' | 'Construction' | 'Renewable Energy' | 'Company News';
   date: string;
   author: string;
   image: string;
@@ -17,6 +17,106 @@ export interface NewsArticle {
 }
 
 export const newsArticles: NewsArticle[] = [
+  {
+    id: 'ksa-mauritania-partnership',
+    slug: 'ksa-mauritania-exclusive-partnership',
+    title: 'JIL Signs Exclusive Mining Partnership for Saudi Arabia & Mauritania',
+    excerpt:
+      'At the Future Minerals Forum in Riyadh, Juggernaut Industries MD Bello Mohammed signed an exclusive agreement with Nebras Business Holdings, securing our presence in the Kingdom of Saudi Arabia and Mauritania.',
+    category: 'Mining & Exploration',
+    date: '2026-02-10',
+    author: 'Corporate Communications',
+    image: '/event-3.jpeg',
+    images: ['/event-3.jpeg'],
+    href: '/news/ksa-mauritania-exclusive-partnership',
+    content: `
+      <p>Juggernaut Industries Limited is proud to announce a landmark milestone in our international growth strategy. At the prestigious <strong>Future Minerals Forum in Riyadh</strong>, our Managing Director, Alh. Bello Mohammed, FNSEG, attended a signing ceremony for an exclusive agreement with <strong>Nebras Business Holdings</strong>, a reputable Saudi company.</p>
+
+      <p>This partnership secures exclusivity in the <strong>Kingdom of Saudi Arabia and Mauritania</strong>, positioning Juggernaut Industries to drive growth and innovation in the mining sector across these key regions. It reflects our commitment to building strategic alliances that shape the future of the industry.</p>
+
+      <p>The Future Minerals Forum, held annually in Riyadh, is one of the world's leading platforms for dialogue on the role of minerals in the global energy transition. Our participation and partnership signing at this forum underscores JIL's growing international footprint and recognition as a credible force in African and global mining.</p>
+
+      <p>We look forward to the significant opportunities this collaboration will unlock — and to further strengthening our position as Nigeria's leading multidisciplinary services company on the global stage.</p>
+    `,
+    tags: ['Partnership', 'Saudi Arabia', 'Mauritania', 'Future Minerals Forum', 'International'],
+    featured: true,
+  },
+  {
+    id: 'md-nseg-honorary-fellow',
+    slug: 'md-bello-mohammed-nseg-honorary-fellow',
+    title: 'MD Alh. Bello Mohammed Conferred as Honorary Fellow of NSEG',
+    excerpt:
+      'Juggernaut Industries congratulates our Managing Director, Alh. Bello Mohammed, FNSEG, on his conferment as Honorary Fellow of the Nigerian Society of Economic Geologists — a prestigious recognition of his exceptional leadership in Nigeria\'s mining industry.',
+    category: 'Company News',
+    date: '2025-10-29',
+    author: 'Corporate Communications',
+    image: '/event-7.jpeg',
+    images: ['/event-7.jpeg', '/event-8.jpg', '/event-5.jpg', '/event-6.jpg'],
+    href: '/news/md-bello-mohammed-nseg-honorary-fellow',
+    content: `
+      <p>Juggernaut Industries Limited is proud to congratulate our Managing Director, <strong>Alh. Bello Mohammed, FNSEG</strong>, on his conferment as an <strong>Honorary Fellow of the Nigerian Society of Economic Geologists (NSEG)</strong> — a prestigious recognition of his exceptional leadership, commitment, and contributions to the growth of Nigeria's mining and exploration industry.</p>
+
+      <p>The award was proudly received on his behalf by our Executive Director, <strong>Usman Mohammed</strong>, during the <strong>4th International Conference and Exhibition</strong> hosted by the Nigerian Society of Economic Geologists (NSEG) in collaboration with the Nigerian Geological Survey Agency (NGSA) and the Nigerian Mining and Geosciences Society (NMGS), which took place from 26–29 October 2025.</p>
+
+      <p>This year's conference theme — <em>"Emerging Technologies in Economic Geology: Unlocking Nigeria's Mineral Potentials"</em> — underscores the forward-thinking direction of our industry, one that Juggernaut Industries remains deeply committed to advancing.</p>
+
+      <p>This recognition is not only a tribute to Alh. Bello Mohammed's personal dedication but also a reflection of the standard of excellence that Juggernaut Industries has upheld across more than two decades of operations.</p>
+
+      <p>Congratulations once again to Alh. Bello Mohammed, FNSEG, and the entire Juggernaut team on this outstanding recognition. #NSEG #NigeriaMining #EconomicGeology</p>
+    `,
+    tags: ['Award', 'NSEG', 'Bello Mohammed', 'Recognition', 'Company News'],
+    featured: true,
+  },
+  {
+    id: 'nigeria-mining-week-2025',
+    slug: 'nigeria-mining-week-2025',
+    title: 'JIL at the 10th Nigeria Mining Week — Inspiring a Mining-Led Future',
+    excerpt:
+      'The Juggernaut team attended the 10th Nigeria Mining Week in Abuja, connecting with over 1,200 industry leaders and contributing to discussions on innovation, partnerships, and mining-led economic transformation.',
+    category: 'Mining & Exploration',
+    date: '2025-10-15',
+    author: 'Corporate Communications',
+    image: '/event-15.jpg',
+    images: ['/event-15.jpg', '/event-16.jpg', '/event-17.jpg', '/event-8.jpg', '/event-9.jpg', '/event-10.jpg', '/event-11.jpg', '/event-12.jpg', '/event-13.jpg', '/event-14.jpg'],
+    href: '/news/nigeria-mining-week-2025',
+    content: `
+      <p>What an incredible <strong>10th edition of Nigeria Mining Week</strong>, held right here in Abuja!</p>
+
+      <p>The Juggernaut Industries Limited team attended in full force, energised by the bold vision of <strong>mining-led economic transformation</strong> on display across three dynamic days at the Abuja Continental Hotel (13–15 October 2025).</p>
+
+      <p>Highlights included the dynamic <strong>Kaduna Mining Development Company Limited (KMDC) Deal Room</strong>, the first-of-its-kind <strong>Nigeria Gold Day</strong> (proudly sponsored by the Solid Minerals Development Fund), and insightful panels on value addition and sustainable growth.</p>
+
+      <p>We connected with over 1,200 industry leaders, sparking discussions on innovative partnerships and the future of Nigeria's solid minerals sector. A huge thank you to the <strong>Ministry of Solid Minerals Development</strong> and all fellow attendees for three days of collaboration and momentum.</p>
+
+      <p>Here's to turning these conversations into action for a greener, more competitive future. #NigeriaMiningWeek #MiningTransformation #SustainableMining</p>
+    `,
+    tags: ['Nigeria Mining Week', 'Industry Event', 'Mining', 'Abuja', 'Networking'],
+    featured: true,
+  },
+  {
+    id: 'rc-drilling-osun-state',
+    slug: 'rc-drilling-osun-state',
+    title: 'JIL RC Drilling Rig in Full Operation — Osun State, Nigeria',
+    excerpt:
+      'Juggernaut Industries\' RC drilling rig continues grade control and exploration operations in Osun State, demonstrating our in-house technical capability and commitment to Nigeria\'s growing mining sector.',
+    category: 'Mining & Exploration',
+    date: '2025-10-01',
+    author: 'Exploration Team',
+    image: '/survey-8.jpg',
+    images: ['/survey-8.jpg', '/survey-9.jpg', '/drilling.jpg', '/mineral.jpg'],
+    href: '/news/rc-drilling-osun-state',
+    content: `
+      <p>Juggernaut Industries Limited continues to demonstrate its in-house technical capability with our RC (Reverse Circulation) drilling rig in full operation in <strong>Osun State, Nigeria</strong>.</p>
+
+      <p>This deployment reflects our ongoing commitment to providing world-class grade control and exploration drilling services to our clients. Our own RC drilling rig — part of our broader portfolio of dedicated equipment including geophysics tools and an in-house laboratory — ensures complete control over quality, timelines, and project outcomes.</p>
+
+      <p>Operating effectively across Nigeria's diverse terrains, our team of experienced drillers and geologists delivers precise, reliable results that meet international reporting standards. This operational depth is what sets Juggernaut Industries apart as a fully integrated mineral exploration services partner.</p>
+
+      <p>#RCDrilling #MiningExploration #Nigeria #OsunState #GeologyInAction</p>
+    `,
+    tags: ['Drilling', 'RC Drilling', 'Osun State', 'Mining Operations'],
+    featured: false,
+  },
   {
     id: 'hse-policy-launch',
     slug: 'hse-policy-formalized',
@@ -42,30 +142,6 @@ export const newsArticles: NewsArticle[] = [
     featured: false,
   },
   {
-    id: 'shea-processing-milestone',
-    slug: 'bida-shea-processing-excellence',
-    title: 'Shea Processing Excellence: Scaling Production in Bida',
-    excerpt:
-      'The Bida Shea Post-Harvesting and Processing Centre reaches a production milestone of 1,000 tonnes annually, with plans to scale to 10,000 tonnes.',
-    category: 'Agriculture',
-    date: '2025-02-15',
-    author: 'Agricultural Division',
-    image: '/shea.jpg',
-    images: ['/shea.jpg', '/farmers.jpg', '/Agriculture.jpg', '/oil_palm.jpg'],
-    href: '/news/bida-shea-processing-excellence',
-    content: `
-      <p>Juggernaut Industries is revolutionizing the agricultural value chain in Niger State with our Shea processing operations. Our facility in Bida, the first of its kind in the region, has successfully reached its initial production target of 1,000 tonnes of processed shea butter per year.</p>
-      
-      <p>Nigeria is the world's largest producer of shea butter, and Niger State accounts for 70% of that production. JIL owns its own Shea Tree Parkland with an estimated 100,000 wild shea trees, ensuring a sustainable and consistent supply of high-quality raw materials.</p>
-      
-      <p>We are now moving into the next phase of expansion, which aims to scale our production capacity to 10,000 tonnes annually. This expansion will create hundreds of jobs and significantly boost the local economy while providing high-grade agricultural products for export.</p>
-      
-      <p>Our investment in mechanized equipment, including tractors and specialized processing machinery, ensures that JIL remains a leader in Nigeria's agro-processing sector. We are also working with local farmers through our out-grower scheme to provide training and access to modern harvesting techniques.</p>
-    `,
-    tags: ['Agriculture', 'Shea Butter', 'Processing', 'Bida', 'Niger State'],
-    featured: true,
-  },
-  {
     id: 'lithium-exploration-expansion',
     slug: 'west-oyo-lithium-project',
     title: "West Oyo Lithium Project: Expanding Nigeria's Battery Mineral Frontier",
@@ -82,61 +158,11 @@ export const newsArticles: NewsArticle[] = [
       
       <p>As the global demand for battery minerals grows, JIL is positioning itself at the forefront of Nigeria's emerging critical minerals sector. Our specialized deep-hole RC and Diamond drilling rigs are currently deployed at the site, providing high-quality core samples for resource assessment.</p>
       
-      <p>"The West Oyo project represents our commitment to innovation and sustainable energy," said Executive Director Usman Mohammed. "By leveraging our experience from the NIMEP programme, we are helping Nigeria unlock its potential as a provider of minerals essential for the global energy transition."</p>
-      
-      <p>This project builds on our track record of successful exploration, including our previous discovery of Lead, Zinc, and Silver deposits under the National Integrated Mineral Exploration Project (NIMEP). Our geologists are utilizing advanced geochemistry and structural mapping to target pegmatite bodies with high lithium potential.</p>
+      <p>"The West Oyo project represents our commitment to innovation and sustainable energy," said Executive Director Usman Mohammed. "We are helping Nigeria unlock its potential as a provider of minerals essential for the global energy transition."</p>
+
+      <p>This project builds on our track record of successful exploration, including our previous discovery of Lead, Zinc, and Silver deposits. Our geologists are utilizing advanced geochemistry and structural mapping to target pegmatite bodies with high lithium potential.</p>
     `,
     tags: ['Lithium', 'Newstar Minerals', 'Drilling', 'Battery Minerals', 'West Oyo'],
-  },
-  {
-    id: 'nimep-lot-a3-success',
-    slug: 'nimep-lot-a3-success',
-    title: 'Juggernaut Industries Achieves Major Milestone in NIMEP LOT A3',
-    excerpt:
-      'Our exploration team successfully completes the Lead, Zinc, and Silver exploration program, marking a significant success for the National Integrated Mineral Exploration Project.',
-    category: 'Mining & Exploration',
-    date: '2024-11-15',
-    author: 'Mining Operations',
-    image: '/mining-1.jpeg',
-    images: ['/mining-1.jpeg', '/survey-1.jpg', '/survey-2.jpg', '/survey.jpg', '/survey-4.jpg'],
-    href: '/news/nimep-lot-a3-success',
-    content: `
-      <p>Juggernaut Industries Limited is proud to announce the successful completion of our exploration mandate under the National Integrated Mineral Exploration Project (NIMEP) LOT A3. This project focused on the discovery and definition of Lead, Zinc, and Silver deposits across the Benue Trough.</p>
-
-      <h2>Proven Expertise in the Field</h2>
-      <p>Utilizing our own RC drill rigs and advanced geophysics equipment, our team conducted a comprehensive program including desktop studies, soil mapping, and intensive drilling. The results have been described as highly promising, contributing vital data to Nigeria's national mineral resource database.</p>
-
-      <h2>Technological Advantage</h2>
-      <p>Our commitment to excellence is backed by our in-house laboratory and state-of-the-art exploration technology. This allows for rapid sample analysis and real-time decision-making in the field, ensuring that our exploration efforts are both efficient and accurate.</p>
-
-      <h2>Setting New Standards</h2>
-      <p>As the first contractor to complete their scope under the NIMEP program, Juggernaut Industries has set a high standard for indigenous mineral exploration services in West Africa. We continue to build on this success with upcoming projects in gold and battery minerals.</p>
-    `,
-    tags: ['Mining', 'NIMEP', 'Exploration', 'Lead', 'Zinc', 'Silver'],
-    featured: true,
-  },
-  {
-    id: 'executive-summit-2025',
-    slug: 'executive-summit-strategic-growth',
-    title: 'Executive Summit: Strategic Planning for Industrial Growth',
-    excerpt:
-      'JIL leadership convenes for an annual summit to chart the course for 2025, focusing on renewable energy and agricultural technology.',
-    category: 'Company News',
-    date: '2024-12-15',
-    author: 'Executive Team',
-    image: '/event-1.jpeg',
-    images: ['/event-1.jpeg', '/event-10.jpg', '/event-11.jpg', '/event-8.jpg'],
-    href: '/news/executive-summit-strategic-growth',
-    content: `
-      <p>The leadership of Juggernaut Industries Limited recently concluded its annual Executive Summit. The gathering, led by Managing Director Alhaji Bello Mohammed, focused on reviewing our recent achievements and outlining the strategic roadmap for the coming years.</p>
-      
-      <p>Key areas of focus for 2025 include the further expansion of our Solar Energy Division—which has already successfully completed street lighting projects across multiple states—and the integration of new agricultural technologies into our 5,000-hectare Niger State farms.</p>
-      
-      <p>The summit also addressed our commitment to community relations and local capacity building, ensuring that our growth continues to benefit the regions where we operate.</p>
-      
-      <p>As we approach our second decade of operations, the summit reaffirmed our vision: to be on the global listing of world-class companies through excellence, integrity, and innovation. The board also approved a new R&D investment fund to explore emerging technologies in green hydrogen and smart mining.</p>
-    `,
-    tags: ['Executive Summit', 'Strategic Planning', 'Growth', '2025'],
   },
   {
     id: 'segilola-gold-update',
@@ -166,7 +192,7 @@ export const newsArticles: NewsArticle[] = [
     title: 'Rural Electrification Project Brings Light to 50+ Communities',
     excerpt:
       'Juggernaut successfully installs solar street lights and transformers across multiple Nigerian states, improving quality of life for thousands.',
-    category: 'Solar & Renewable Energy',
+    category: 'Renewable Energy',
     date: '2024-08-12',
     author: 'Energy Division',
     image: '/solarfarm.jpg',
@@ -185,27 +211,6 @@ export const newsArticles: NewsArticle[] = [
       <p>By prioritizing solar technology, we are helping communities reduce energy costs while contributing to Nigeria's renewable energy goals and climate change mitigation efforts. Our future plan includes the development of multi-megawatt solar farms to provide industrial-scale energy solutions.</p>
     `,
     tags: ['Solar', 'Renewable Energy', 'Electrification', 'Community Development'],
-  },
-  {
-    id: '20-years-excellence',
-    slug: '20-years-of-industrial-excellence',
-    title: 'Commemorating Nearly Two Decades of Industrial Excellence',
-    excerpt:
-      'Since its founding in 2006, Juggernaut Industries Limited has grown from a specialized mineral exploration firm into a diversified industrial leader across West Africa.',
-    category: 'Company News',
-    date: '2024-06-01',
-    author: 'The Board of Directors',
-    image: '/story.jpg',
-    images: ['/story.jpg', '/team-group.jpg', '/team-1.jpg', '/team-2.jpg', '/team-3.jpg'],
-    href: '/news/20-years-of-industrial-excellence',
-    content: `
-      <p>Founded in 2006, Juggernaut Industries Limited (JIL) is approaching two decades of unwavering service to Nigeria's industrial sectors. What began as a focused mission to provide world-class mineral exploration services has evolved into a diversified conglomerate with significant footprints in Agriculture, Construction, and Renewable Energy.</p>
-      
-      <p>Our success is built on the vision of our founders and the dedication of over 100 professionals who share a commitment to integrity, innovation, and excellence. From the remote drill sites of the NIMEP programme to our mechanized farms in Niger State, the JIL brand stands as a symbol of indigenous capability and professional pride.</p>
-      
-      <p>As we look toward the future, we remain dedicated to unlocking Africa's natural resources responsibly and sustainably, ensuring that our growth contributes to the prosperity of the continent. We are currently scouting for new headquarters in Abuja to accommodate our growing administrative and technical support teams.</p>
-    `,
-    tags: ['History', 'Anniversary', 'JIL Story', 'Industrial Growth'],
   },
 ];
 

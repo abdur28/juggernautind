@@ -6,7 +6,7 @@ import { GoldDot } from '@/components/ui/gold-dot';
 import { ServiceAccordion } from '@/components/ui/accordion-list';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
 import { services } from '@/config/services';
-import { Pickaxe, Leaf, Building2, Sun, Fuel, ArrowRight } from 'lucide-react';
+import { Pickaxe, Leaf, Building2, Sun, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -20,7 +20,6 @@ const iconMap: Record<string, React.ReactNode> = {
   Leaf: <Leaf className="w-5 h-5" />,
   Building2: <Building2 className="w-5 h-5" />,
   Sun: <Sun className="w-5 h-5" />,
-  Fuel: <Fuel className="w-5 h-5" />,
 };
 
 export function ServicesAsymmetric({ className }: ServicesAsymmetricProps) {
@@ -67,9 +66,10 @@ export function ServicesAsymmetric({ className }: ServicesAsymmetricProps) {
               {/* Description */}
               <ScrollReveal animation="fadeUp" delay={0.1}>
                 <p className="text-steel-blue leading-relaxed">
-                  Our activities and interest span across various sectors such as Agriculture,
-                  Mining, Construction Engineering, Manufacturing, Oil & Gas, Solar Energy
-                  Installation, Rural Electrification and General Contractor & Supplies.
+                  JIL delivers a comprehensive range of services across Nigeria&apos;s key growth
+                  sectors, including mineral exploration, construction, renewable energy, and
+                  agribusiness. Through a disciplined, client-focused approach, the company
+                  provides integrated solutions tailored to government and private sector clients.
                 </p>
               </ScrollReveal>
 
@@ -114,18 +114,32 @@ export function ServicesAsymmetric({ className }: ServicesAsymmetricProps) {
               </motion.div>
             </div>
 
-            {/* Right - Sticky Image */}
+            {/* Right - Sticky 4-Image Collage */}
             <ScrollReveal animation="fadeUp" className="order-2">
               <div className="sticky top-24">
-                <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/survey-4.jpg"
-                    alt="Industrial mining operation"
-                    fill
-                    className="object-cover"
-                  />
-                  {/* Subtle gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/40 via-transparent to-transparent" />
+                <div className="grid grid-cols-2 gap-1 aspect-square w-full">
+                  {[
+                    { src: '/mining-2.jpeg', label: 'Mining & Exploration' },
+                    { src: '/shea.jpg', label: 'Agriculture' },
+                    { src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop', label: 'Construction' },
+                    { src: '/solar_installation.jpg', label: 'Renewable Energy' },
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className={`relative overflow-hidden ${i === 0 ? 'rounded-tl-xl' : i === 1 ? 'rounded-tr-xl' : i === 2 ? 'rounded-bl-xl' : 'rounded-br-xl'}`}
+                    >
+                      <Image
+                        src={item.src}
+                        alt={item.label}
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/70 via-transparent to-transparent" />
+                      <span className="absolute bottom-2 left-2 font-heading text-[9px] tracking-[0.1em] uppercase text-industrial-gold">
+                        {item.label}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </ScrollReveal>

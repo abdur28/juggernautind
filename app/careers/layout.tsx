@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Careers – Join Our Team',
   description:
-    'Explore career opportunities at Juggernaut Industries Limited. Join a world-class team working across mining, agriculture, construction, solar energy, and oil & gas in Nigeria.',
+    'Explore career opportunities at Juggernaut Industries Limited. Join a world-class team working across mining, agriculture & agro-processing, construction, and renewable energy in Nigeria.',
   keywords: [
     'careers Juggernaut Industries',
     'jobs mining Nigeria',

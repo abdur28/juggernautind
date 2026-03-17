@@ -13,15 +13,14 @@ export const metadata: Metadata = {
     template: "%s | Juggernaut Industries",
   },
   description:
-    "Juggernaut Industries Limited (JIL) - A Nigerian company delivering quality services across Mining, Agriculture, Construction, Solar Energy, and Oil & Gas since 2006.",
+    "Juggernaut Industries Limited (JIL) - A Nigerian company delivering quality services across Mining, Agriculture & Agro-Processing, Construction, and Renewable Energy since 2006.",
   keywords: [
     "Juggernaut Industries",
     "JIL Nigeria",
     "Mining Nigeria",
     "Agriculture Nigeria",
     "Construction Abuja",
-    "Solar Energy Nigeria",
-    "Oil and Gas Nigeria",
+    "Renewable Energy Nigeria",
     "Nigerian industrial company",
     "Abuja contractors",
   ],
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "Juggernaut Industries Limited",
     title: "Juggernaut Industries Limited | Building Africa's Future",
     description:
-      "A Nigerian company with a vision to be on the global listing of world class companies. Services in Mining, Agriculture, Construction, Solar Energy, and Oil & Gas.",
+      "A Nigerian company with a vision to be on the global listing of world class companies. Services in Mining, Agriculture & Agro-Processing, Construction, and Renewable Energy.",
   },
   twitter: {
     card: "summary_large_image",

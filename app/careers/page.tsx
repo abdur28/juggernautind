@@ -499,7 +499,7 @@ export default function CareersPage() {
                           <SelectItem value="mining-engineer" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Mining Engineer</SelectItem>
                           <SelectItem value="agricultural-specialist" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Agricultural Specialist</SelectItem>
                           <SelectItem value="project-manager" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Project Manager</SelectItem>
-                          <SelectItem value="solar-technician" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Solar Energy Technician</SelectItem>
+                          <SelectItem value="solar-technician" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Renewable Energy Technician</SelectItem>
                           <SelectItem value="other" className="text-deep-navy focus:bg-industrial-gold/10 focus:text-deep-navy cursor-pointer">Other</SelectItem>
                         </SelectContent>
                       </Select>

@@ -51,21 +51,21 @@ export const projects: Project[] = [
     href: '/projects/ministry-solid-minerals',
   },
   {
-    id: 'nimep',
+    id: 'lead-zinc-silver',
     title: 'Lead, Zinc & Silver Exploration',
-    client: 'National Integrated Mineral Exploration Programme',
-    clientLogo: '/nimep.png',
+    client: 'Ministry of Mines and Steel Development',
+    clientLogo: '/ministry.png',
     category: 'Mining & Exploration',
     location: 'Benue Trough, Nigeria',
     year: '2010',
     description:
       'Successfully completed the Lead, Zinc and Silver exploration program on the Benue trough for the Ministry of Mines and Steel Development.',
     fullDescription:
-      'Juggernaut Industries successfully completed the Lead, Zinc and Silver exploration program on the Benue trough for the Ministry of Mines and Steel Development in Nigeria. This comprehensive project included Desktop Study, Soil Mapping, Geo-Physics and RC Drilling, establishing JIL as the first contractor under the NIMEP programme.',
+      'Juggernaut Industries successfully completed the Lead, Zinc and Silver exploration program on the Benue trough for the Ministry of Mines and Steel Development in Nigeria. This comprehensive project included Desktop Study, Soil Mapping, Geo-Physics and RC Drilling, yielding significant new discoveries.',
     services: ['Desktop Study', 'Soil Mapping', 'Geo-Physics', 'RC Drilling', 'Data Analysis'],
     image: '/survey-4.jpg',
     images: ['/survey-4.jpg', '/survey-5.jpg', '/survey-6.jpg', '/survey-7.jpg'],
-    href: '/projects/nimep',
+    href: '/projects/lead-zinc-silver',
   },
   {
     id: 'segilola',
@@ -106,8 +106,8 @@ export const projectCategories = [
   'All',
   'Mining & Exploration',
   'Construction',
-  'Agriculture',
-  'Solar Energy',
+  'Agriculture & Agro-Processing',
+  'Renewable Energy',
 ];
 
 // Success factors from company profile

@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PageHeader } from '@/components/ui/page-header';
 import { GoldDot } from '@/components/ui/gold-dot';
-import { BracketText } from '@/components/ui/bracket-text';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
 import { services } from '@/config/services';
 import { ArrowRight } from 'lucide-react';
@@ -50,7 +49,7 @@ export default function ServicesPage() {
 
             <ScrollReveal animation="fadeUp" delay={0.15}>
               <p className="text-steel-blue leading-relaxed text-lg">
-                At JIL we are committed to <strong className="text-deep-navy">technical and professional excellence</strong> of products and services that are tailored, innovative, cost effective and accord with international best practice with emphasis on highly skilled qualified personnel.
+                JIL delivers a comprehensive range of services across Nigeria's key growth sectors, including mineral exploration, construction, renewable energy, agribusiness, and general contracting and supplies. Through a disciplined, client-focused approach, the company provides integrated solutions tailored to the specific needs of both government and private sector clients.
               </p>
             </ScrollReveal>
           </div>
@@ -102,9 +101,11 @@ export default function ServicesPage() {
               </ScrollReveal>
 
               <ScrollReveal animation="fadeUp" delay={0.15}>
-                <p className="text-light-gray leading-relaxed text-lg max-w-xl">
-                  {featuredService.fullDescription}
-                </p>
+                <div className="space-y-3 max-w-xl">
+                  {featuredService.fullDescription.map((para, i) => (
+                    <p key={i} className="text-light-gray leading-relaxed text-lg">{para}</p>
+                  ))}
+                </div>
               </ScrollReveal>
 
               <ScrollReveal animation="fadeUp" delay={0.2}>
@@ -168,11 +169,12 @@ export default function ServicesPage() {
           />
         </div>
 
-        {/* Bracket Text Header */}
-        <div className="px-4 md:px-8 lg:px-12 mb-12 md:mb-16">
-          <BracketText size="full" variant="light">
-            MORE SERVICES
-          </BracketText>
+        <div className="container-jil mb-12 md:mb-16">
+          <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold mb-3">
+            <span className="w-8 h-px bg-industrial-gold" />
+            More Services
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl font-light text-deep-navy">OTHER SERVICES</h2>
         </div>
 
         <div className="container-jil relative z-10">
@@ -245,7 +247,7 @@ export default function ServicesPage() {
             <ScrollReveal animation="fadeUp">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { value: '5+', label: 'Service Areas', description: 'Diverse sectors' },
+                  { value: '4', label: 'Service Areas', description: 'Diverse sectors' },
                   { value: '20+', label: 'Years Experience', description: 'Since 2006' },
                   { value: '100%', label: 'Client Satisfaction', description: 'Quality assured' },
                   { value: '24/7', label: 'Support', description: 'Always available' },
@@ -295,7 +297,7 @@ export default function ServicesPage() {
                 <div className="space-y-3">
                   {[
                     'Own equipment - drill rigs, geophysics, in-house lab',
-                    'NIMEP certified first contractor',
+                    'COREN-registered engineers',
                     'International team with local expertise',
                     'Projects delivered on time and within budget',
                   ].map((point, index) => (

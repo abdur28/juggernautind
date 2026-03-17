@@ -197,7 +197,7 @@ export async function sendCareerApplicationEmail(
     'mining-engineer': 'Mining Engineer',
     'agricultural-specialist': 'Agricultural Specialist',
     'project-manager': 'Project Manager',
-    'solar-technician': 'Solar Energy Technician',
+    'solar-technician': 'Renewable Energy Technician',
     other: 'Other',
   };
 

@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PageHeader } from '@/components/ui/page-header';
 import { GoldDot } from '@/components/ui/gold-dot';
-import { BracketText } from '@/components/ui/bracket-text';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
 import { projects, successFactors } from '@/config/projects';
 import { ArrowRight } from 'lucide-react';
@@ -116,11 +115,12 @@ export default function ProjectsPage() {
           />
         </div>
 
-        {/* Bracket Text Header */}
-        <div className="px-4 md:px-8 lg:px-12 mb-12 md:mb-16">
-          <BracketText size="full" variant="light">
-            PROJECT PORTFOLIO
-          </BracketText>
+        <div className="container-jil mb-12 md:mb-16">
+          <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold mb-3">
+            <span className="w-8 h-px bg-industrial-gold" />
+            Project Portfolio
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl font-light text-deep-navy">OUR PROJECTS</h2>
         </div>
 
         <div className="container-jil relative z-10">

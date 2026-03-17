@@ -49,7 +49,7 @@ export function Header() {
         <div className="container-jil">
           <nav className="flex items-center justify-between h-20 md:h-24">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
+            <Link href="/" className="flex flex-col items-center group">
               <div className="relative w-10 h-10 md:w-12 md:h-12">
                 <Image
                   src="/logo.png"
@@ -59,11 +59,11 @@ export function Header() {
                   priority
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="font-display text-lg md:text-xl font-semibold text-off-white tracking-wide group-hover:text-industrial-gold transition-colors">
+              <div className="flex flex-col items-center">
+                <span className="font-display text-base md:text-2xl font-semibold text-off-white tracking-wide group-hover:text-industrial-gold transition-colors leading-[0.8em]">
                   JUGGERNAUT
                 </span>
-                <span className="text-[10px] md:text-xs font-heading tracking-[0.2em] text-mid-gray uppercase">
+                <span className="text-[7px] md:text-[10px] font-heading tracking-[0.2em] text-mid-gray uppercase">
                   Industries Ltd
                 </span>
               </div>
@@ -218,9 +218,9 @@ export function Header() {
                   <Link
                     href="/"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center gap-3"
+                    className="flex flex-col items-center"
                   >
-                    <div className="relative w-10 h-10">
+                    <div className="relative w-12 h-12">
                       <Image
                         src="/logo.png"
                         alt="Juggernaut Industries Logo"
@@ -228,9 +228,14 @@ export function Header() {
                         className="object-contain"
                       />
                     </div>
-                    <span className="font-display text-lg font-semibold text-off-white">
-                      JUGGERNAUT
-                    </span>
+                    <div className="flex flex-col items-center">
+                      <span className="font-display text-base font-semibold text-off-white leading-[0.8em]">
+                        JUGGERNAUT
+                      </span>
+                      <span className="text-[7px] font-heading tracking-[0.2em] text-mid-gray uppercase">
+                        Industries Ltd
+                      </span>
+                    </div>
                   </Link>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}

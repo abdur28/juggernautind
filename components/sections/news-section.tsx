@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { BracketText } from '@/components/ui/bracket-text';
 import { NewsCard } from '@/components/ui/news-card';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
 import { getLatestNews, featuredNews } from '@/config/news';

@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PageHeader } from '@/components/ui/page-header';
 import { GoldDot } from '@/components/ui/gold-dot';
-import { BracketText } from '@/components/ui/bracket-text';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
 import {
   services,
@@ -74,9 +73,13 @@ export default function ServiceDetailPage() {
 
                 {/* Description */}
                 <ScrollReveal animation="fadeUp" delay={0.1}>
-                  <p className="text-steel-blue leading-relaxed text-lg">
-                    {service.fullDescription}
-                  </p>
+                  <div className="space-y-4">
+                    {service.fullDescription.map((para, i) => (
+                      <p key={i} className="text-steel-blue leading-relaxed text-lg">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
                 </ScrollReveal>
 
                 {/* Divider */}
@@ -103,7 +106,7 @@ export default function ServiceDetailPage() {
                     href="/contact"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-industrial-gold text-near-black font-heading text-xs tracking-[0.1em] uppercase rounded-xl btn-animated relative z-1 overflow-hidden after:bg-steel-blue hover:text-off-white transition-colors"
                   >
-                    Discuss Your Project
+                    Contact Us
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </ScrollReveal>
@@ -162,11 +165,12 @@ export default function ServiceDetailPage() {
             />
           </div>
 
-          {/* Bracket Text Header */}
-          <div className="px-4 md:px-8 lg:px-12 mb-12 md:mb-16">
-            <BracketText size="full" variant="light">
-              HOW WE DO IT
-            </BracketText>
+          <div className="container-jil mb-12 md:mb-16">
+            <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold mb-3">
+              <span className="w-8 h-px bg-industrial-gold" />
+              Our Process
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-light text-deep-navy">HOW WE DO IT</h2>
           </div>
 
           <div className="container-jil relative z-10">
@@ -226,7 +230,7 @@ export default function ServiceDetailPage() {
                 <div className="sticky top-24">
                   <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl">
                     <Image
-                      src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
+                      src="/drilling.jpg"
                       alt="Mining exploration services"
                       fill
                       className="object-cover"
@@ -309,11 +313,12 @@ export default function ServiceDetailPage() {
             />
           </div>
 
-          {/* Bracket Text Header */}
-          <div className="px-4 md:px-8 lg:px-12 mb-12 md:mb-16">
-            <BracketText size="full" variant="light">
-              OUR CROPS
-            </BracketText>
+          <div className="container-jil mb-12 md:mb-16">
+            <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold mb-3">
+              <span className="w-8 h-px bg-industrial-gold" />
+              Our Products
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-light text-deep-navy">SHEA BUTTER</h2>
           </div>
 
           <div className="container-jil relative z-10">
@@ -346,60 +351,14 @@ export default function ServiceDetailPage() {
                         <h3 className="font-display text-xl md:text-2xl font-semibold text-deep-navy mb-4">
                           {crop.name}
                         </h3>
-                        <p className="text-steel-blue leading-relaxed">
+                        <p className="text-steel-blue leading-relaxed mb-4">
                           {crop.description}
                         </p>
-                      </div>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* General Features Section (for other services) */}
-      {!isMining && !isAgriculture && service.highlights && (
-        <section className="relative py-14 overflow-hidden bg-off-white">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `radial-gradient(circle at 2px 2px, #0D1B2A 1px, transparent 0)`,
-                backgroundSize: '48px 48px',
-              }}
-            />
-          </div>
-
-          <div className="container-jil relative z-10">
-            {/* Section Header */}
-            <ScrollReveal animation="fadeUp">
-              <div className="mb-12 md:mb-16">
-                <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold mb-4">
-                  <span className="w-8 h-px bg-industrial-gold" />
-                  Key Highlights
-                </span>
-                <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-deep-navy">
-                  WHY CHOOSE US
-                </h2>
-              </div>
-            </ScrollReveal>
-
-            {/* Highlights Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {service.highlights.map((highlight, index) => (
-                <ScrollReveal key={index} animation="fadeUp" delay={0.1 * index}>
-                  <div className="p-6 rounded-xl bg-white border border-steel-blue/10 hover:border-industrial-gold/20 hover:shadow-lg transition-all">
-                    <div className="flex items-start gap-4">
-                      <div className="w-1 h-12 bg-industrial-gold rounded-full flex-shrink-0" />
-                      <div>
-                        <h3 className="font-heading text-sm tracking-[0.1em] uppercase text-deep-navy mb-2">
-                          {highlight.title}
-                        </h3>
-                        <p className="text-steel-blue text-sm leading-relaxed">
-                          {highlight.description}
+                        <p className="text-steel-blue leading-relaxed text-sm italic">
+                          For partnership, investment, or offtake enquiries, please{' '}
+                          <Link href="/contact" className="text-industrial-gold hover:underline font-semibold not-italic">
+                            contact us
+                          </Link>.
                         </p>
                       </div>
                     </div>
@@ -410,6 +369,7 @@ export default function ServiceDetailPage() {
           </div>
         </section>
       )}
+
 
       {/* Operational Showcase Gallery (for services with multiple images) */}
       {service.images && service.images.length > 0 && (

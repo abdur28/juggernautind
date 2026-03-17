@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     'Juggernaut Industries projects',
     'mining projects Nigeria',
     'construction projects Abuja',
-    'NIMEP contractor',
+    'mineral exploration contractor',
     'Segilola gold mine',
     'Nigerian infrastructure projects',
   ],

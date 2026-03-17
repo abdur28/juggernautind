@@ -8,7 +8,7 @@ export function OrganizationJsonLd() {
     logo: 'https://juggernautind.com/logo.png',
     foundingDate: '2006',
     description:
-      'Juggernaut Industries Limited (JIL) - A Nigerian company delivering quality services across Mining, Agriculture, Construction, Solar Energy, and Oil & Gas since 2006.',
+      'Juggernaut Industries Limited (JIL) - A Nigerian company delivering quality services across Mining, Agriculture & Agro-Processing, Construction, and Renewable Energy since 2006.',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '3 Wiser Estate, Off Regent School Road',
@@ -31,10 +31,9 @@ export function OrganizationJsonLd() {
     },
     knowsAbout: [
       'Mining & Exploration',
-      'Agriculture',
+      'Agriculture & Agro-Processing',
       'Construction',
-      'Solar Energy',
-      'Oil & Gas',
+      'Renewable Energy',
     ],
   };
 

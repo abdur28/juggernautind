@@ -92,7 +92,7 @@ export default async function Image() {
             flexWrap: 'wrap',
           }}
         >
-          {['Mining', 'Agriculture', 'Construction', 'Solar Energy', 'Oil & Gas'].map(
+          {['Mining', 'Agriculture & Agro-Processing', 'Construction', 'Renewable Energy'].map(
             (service) => (
               <div
                 key={service}

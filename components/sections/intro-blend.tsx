@@ -4,11 +4,8 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { BracketText } from '@/components/ui/bracket-text';
 import { GoldDot } from '@/components/ui/gold-dot';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
-import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
 
 interface IntroBlendProps {
   className?: string;
@@ -19,16 +16,12 @@ const aboutContent = {
   title: 'POWERING PROGRESS',
   subtitle: 'ACROSS AFRICA',
   description:
-    'An indigenous mineral exploration services company incorporated since 2006 in Nigeria. We have assembled a world class team with experience in the African terrain which helps serve our esteemed customers.',
-  highlights: [
-    'Own drill rigs & geophysics equipment',
-    'In-house laboratory facilities',
-    'World class drilling team',
-    'NIMEP certified contractor',
-  ],
+    "Juggernaut Industries Limited (JIL) is an indigenous, multidisciplinary services company incorporated in Nigeria in 2006. With more than two decades of operational experience, JIL has grown into a diversified group delivering excellence across mineral exploration, energy, construction, and agribusiness sectors.",
+  description2:
+    "At the heart of JIL's success is a world-class team of local and international professionals, bringing together a wealth of expertise and cross-cultural experience that enables the company to operate effectively across diverse and challenging terrains. This blend of proven local knowledge and global expertise allows JIL to consistently meet and exceed the expectations of both government and private sector clients, while adhering to the highest international standards.",
   vision: {
     title: 'Our Vision',
-    text: 'To be the leading Nigerian mining & exploration services company, known for its Excellence, People and Values.',
+    text: "To be Nigeria's leading multidisciplinary services company, recognised for unwavering excellence, the quality of our people, and the strength of our values.",
   },
   mission: {
     title: 'Our Mission',
@@ -81,12 +74,6 @@ export function IntroBlend({ className }: IntroBlendProps) {
         className
       )}
     >
-      {/* Full-Width Bracket Text Headline */}
-      <div className="px-4 md:px-8 lg:px-12 mb-16 md:mb-24">
-        <BracketText size="full" variant="default">
-          BUILDING AFRICA&apos;S FUTURE
-        </BracketText>
-      </div>
 
       {/* Main Content - Image Left, Info Right */}
       <div className="container-jil">
@@ -124,25 +111,13 @@ export function IntroBlend({ className }: IntroBlendProps) {
             </ScrollReveal>
 
             {/* Description */}
-            <ScrollReveal animation="fadeUp" delay={0.1}>
+            <ScrollReveal animation="fadeUp" delay={0.1} className="space-y-4">
               <p className="text-light-gray leading-relaxed">
                 {aboutContent.description}
               </p>
-            </ScrollReveal>
-
-            {/* Highlights */}
-            <ScrollReveal animation="fadeUp" delay={0.2}>
-              <div className="grid grid-cols-2 gap-3">
-                {aboutContent.highlights.map((highlight, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 text-sm text-light-gray"
-                  >
-                    <GoldDot size="sm" />
-                    <span>{highlight}</span>
-                  </div>
-                ))}
-              </div>
+              <p className="text-light-gray leading-relaxed">
+                {aboutContent.description2}
+              </p>
             </ScrollReveal>
 
             {/* Divider */}
@@ -175,16 +150,6 @@ export function IntroBlend({ className }: IntroBlendProps) {
               </ScrollReveal>
             </div>
 
-            {/* CTA */}
-            <ScrollReveal animation="fadeUp" delay={0.5}>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-industrial-gold/50 text-industrial-gold font-heading text-xs tracking-[0.1em] uppercase rounded-xl btn-animated relative z-1 overflow-hidden after:bg-industrial-gold hover:text-near-black transition-colors"
-              >
-                Learn More About Us
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </ScrollReveal>
           </div>
         </div>
 

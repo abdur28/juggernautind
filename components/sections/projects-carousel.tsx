@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { projects } from '@/config/projects';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
-import { BracketText } from '@/components/ui/bracket-text';
 
 interface ProjectsCarouselProps {
   className?: string;
@@ -81,15 +80,6 @@ export function ProjectsCarousel({ className }: ProjectsCarouselProps) {
 
   return (
     <section id="projects" className={cn('relative', className)}>
-      {/* Bracket Text Header */}
-      <div className="bg-off-white py-14 md:py-20">
-        <div className="px-4 md:px-8 lg:px-12">
-          <BracketText size="full" variant="light">
-            SELECTED PROJECTS
-          </BracketText>
-        </div>
-      </div>
-
 
       {/* Carousel */}
       <div className="relative h-[92vh] md:h-[90vh] w-full overflow-hidden">

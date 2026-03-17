@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PageHeader } from '@/components/ui/page-header';
 import { GoldDot } from '@/components/ui/gold-dot';
-import { BracketText } from '@/components/ui/bracket-text';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
 import { ArrowRight } from 'lucide-react';
 
@@ -18,9 +17,9 @@ const milestones = [
   },
   {
     year: '2010',
-    title: 'NIMEP Contract Award',
+    title: 'Government Exploration Contract',
     description:
-      'Successfully awarded exploration contract under the National Integrated Mineral Exploration Project (NIMEP) LOT A3 for Lead, Zinc & Silver in the Benue trough.',
+      'Successfully awarded exploration contract for Lead, Zinc & Silver in the Benue trough on behalf of the Ministry of Mines and Steel Development.',
   },
   {
     year: '2014',
@@ -98,16 +97,15 @@ export default function OurStoryPage() {
                 <p className="text-steel-blue leading-relaxed">
                   In our efforts to grow and expand in Nigeria, we participated in the first ever
                   Nigerian mining mineral exploration tender under the Ministry of Mines and Steel
-                  Development. We were successfully awarded a contract for exploration work under
-                  the National Integrated Mineral Exploration Project (NIMEP) LOT A3 for base metals
-                  - Lead, Zinc & Silver.
+                  Development. We were successfully awarded a contract for exploration work for
+                  base metals - Lead, Zinc & Silver.
                 </p>
               </ScrollReveal>
 
               <ScrollReveal animation="fadeUp" delay={0.2}>
                 <p className="text-steel-blue leading-relaxed">
                   Since then, we have been growing leaps and bounds in all our business interests,
-                  expanding into Agriculture, Construction, Solar Energy, and Oil & Gas services
+                  expanding into Agriculture &amp; Agro-Processing, Construction, and Renewable Energy
                   while maintaining our commitment to excellence and quality.
                 </p>
               </ScrollReveal>
@@ -119,10 +117,10 @@ export default function OurStoryPage() {
               <ScrollReveal animation="fadeUp" delay={0.25}>
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    'First NIMEP contractor',
                     'Own drill rigs & equipment',
                     'In-house laboratory',
                     'International team',
+                    'COREN-registered engineers',
                     'Government contracts',
                     'Private sector clients',
                   ].map((fact, index) => (
@@ -166,11 +164,12 @@ export default function OurStoryPage() {
           />
         </div>
 
-        {/* Bracket Text Header */}
-        <div className="px-4 md:px-8 lg:px-12 mb-12 md:mb-16">
-          <BracketText size="full" variant="light">
-            OUR MILESTONES
-          </BracketText>
+        <div className="container-jil mb-12 md:mb-16">
+          <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold mb-3">
+            <span className="w-8 h-px bg-industrial-gold" />
+            Our Journey
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl font-light text-deep-navy">OUR MILESTONES</h2>
         </div>
 
         <div className="container-jil relative z-10">

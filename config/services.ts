@@ -4,8 +4,7 @@ export type ServiceSector =
   | 'mining'
   | 'agriculture'
   | 'construction'
-  | 'solar'
-  | 'oilgas';
+  | 'solar';
 
 export interface ServiceHighlight {
   title: string;
@@ -17,7 +16,7 @@ export interface Service {
   title: string;
   shortTitle: string;
   description: string;
-  fullDescription: string;
+  fullDescription: string[];
   icon: string;
   color: string;
   href: string;
@@ -125,25 +124,13 @@ export const miningProcessSteps = [
   },
 ];
 
-// Agriculture crops
+// Agriculture crops - focused on shea butter only
 export const agricultureCrops = [
   {
     name: 'Shea Butter',
     description:
-      'Nigeria is the largest shea butter producer in the world with annual production of 360,000mt and Niger State has 70% share. JIL has its own Shea Tree Parkland located in Niger State, with an estimated 100,000 wild shea trees. We have setup the first shea post harvesting and processing centre in Bida, Niger State that can produce 1,000tn a year with plans to scale up to 10,000tn.',
+      'Nigeria is the world\'s largest producer of shea nuts, contributing approximately 45% of global production. JIL holds strategic shea assets in Nigeria and has established post-harvesting and processing infrastructure, with shea butter processing to high quality standards to meet local and international markets.',
     image: '/shea.jpg',
-  },
-  {
-    name: 'Rice',
-    description:
-      'For our rice farms in Niger State, we use quality seeds, fertilizers, and inputs to produce high quality rice. We constantly look out to eliminate weeds and protect our rice using new techniques and technologies. We have invested in mechanized equipment like tractors, threshers and weeders to enhance our overall performance.',
-    image: '/rice-farm.jpg',
-  },
-  {
-    name: 'Oil Palm Plantation',
-    description:
-      'We aim to be the largest regional palm producer. Our palm tenera seeds are purchased from Nigerian Institute for Oil Palm Research (NIFOR) and they produce up to 25tn per hectare when fully matured. We are constantly expanding our farm to meet the growing demand for Crude Palm Oil (CPO).',
-    image: '/oil_palm.jpg',
   },
 ];
 
@@ -153,9 +140,11 @@ export const services: Service[] = [
     title: 'Mining & Exploration Services',
     shortTitle: 'Mining',
     description:
-      'Our mining solutions range from grass-roots exploration to advanced definition drill-outs. This includes data compilations and reviews, planning, budgeting, drill campaigns with supervision, logistics, project management and implementation.',
-    fullDescription:
-      'Juggernaut Industries Ltd is an indigenous mineral exploration services company with experience in the African terrain. We own our own drill rigs, geophysics equipment and in-house lab. We completed the Lead, Zinc and Silver exploration for the Nigerian Government under the NIMEP program and made some very exciting discoveries. Our world class drilling team is proud to provide grade control drilling with our partners to the Segilola Gold Project.',
+      'Juggernaut Industries Ltd is an indigenous mineral exploration services company offering a full suite of services — from grass-roots exploration to advanced definition drill-outs — fully compliant with international reporting standards including JORC and NI 43-101.',
+    fullDescription: [
+      'With deep experience across the African terrain and access to dedicated drilling rigs, geophysics equipment, and an in-house laboratory, the company delivers end-to-end solutions encompassing data compilation and review, planning, budgeting, drill campaign supervision, logistics, and project management.',
+      'Juggernaut Industries has demonstrated a strong track record in the field, having successfully completed Lead, Zinc, and Silver exploration on behalf of the Nigerian Government under the NIMEP program, yielding significant new discoveries, while also providing world-class grade control drilling services in partnership with the Segilola Gold Project.',
+    ],
     icon: 'Pickaxe',
     color: 'mining-green',
     href: '/services/mining',
@@ -173,69 +162,75 @@ export const services: Service[] = [
         description: 'We own our own drill rigs, geophysics equipment and in-house laboratory.',
       },
       {
-        title: 'NIMEP Certified',
-        description: 'First contractor under the National Integrated Mineral Exploration Programme.',
+        title: 'International Standards',
+        description: 'JORC and NI 43-101 format reporting and international best practices.',
       },
       {
-        title: 'International Standards',
-        description: 'JORC format reporting and international best practices.',
+        title: 'Proven Track Record',
+        description: 'Successfully completed Lead, Zinc, and Silver exploration with significant new discoveries.',
       },
       {
         title: 'World Class Team',
         description: 'International team of experienced personnel representing diverse cultures.',
       },
     ],
-    image: '/survey-8.jpg',
-    images: ['/survey-8.jpg', '/survey-9.jpg', '/mineral.jpg', '/mineral-2.jpg'],
+    image: '/mining-1.jpeg',
+    images: ['/mining-1.jpeg', '/mining-2.jpeg', '/mining-3.jpeg', '/mineral.jpg', '/mineral-2.jpg'],
   },
   {
     id: 'agriculture',
     title: 'Agriculture & Agro-Processing',
-    shortTitle: 'Agriculture',
+    shortTitle: 'Agriculture & Agro-Processing',
     description:
-      'JIL has 5,000 hectares of farm land in Niger State to cultivate Rice, Palm Oil and Shea butter from Shea trees. We are into production and export of quality agriculture produce, farm establishment, management and consultancy.',
-    fullDescription:
-      'We are involved in end to end of agricultural food chain and we use the latest technology to ensure that we provide more value in the agricultural industry through quality agricultural production. We are focused on creating novel solutions to existing problems in agriculture and transforming them to economic opportunities. Our shea processing centre in Bida, Niger State is the first of its kind, producing 1,000tn annually.',
+      'Nigeria is the world\'s largest producer of shea nuts, contributing approximately 45% of global production. Juggernaut Industries Ltd holds strategic shea assets in Nigeria, positioning the company for significant participation in this growing market.',
+    fullDescription: [
+      'Nigeria is the world\'s largest producer of shea nuts, contributing approximately 45% of global production. Juggernaut Industries Ltd holds strategic shea assets in Nigeria, positioning the company for significant participation in this growing market.',
+      'JIL has established post-harvesting and processing infrastructure and is currently in the process of recommencing operations at a new facility, with a clear growth roadmap to scale production in the near term. The company has an established distribution network and existing international off-take and partnership agreements ready to support full-scale operations.',
+      'JIL remains committed to ethical sourcing, full compliance with Nigerian labour laws, and honouring the shea industry\'s long-standing tradition as a sector that empowers women.',
+    ],
     icon: 'Leaf',
     color: 'mining-green',
     href: '/services/agriculture',
     features: [
-      'Rice Cultivation',
-      'Palm Oil Production',
       'Shea Butter Processing',
-      'Farm Management',
-      'Agricultural Consultancy',
+      'Post-Harvesting Infrastructure',
+      'International Off-Take Agreements',
+      'Ethical Sourcing',
+      'Quality Standards Compliance',
       'Export Services',
     ],
     highlights: [
       {
-        title: '5,000 Hectares',
-        description: 'Vast farm land in Niger State for large-scale agricultural production.',
+        title: 'Processing Machines & Lab',
+        description: 'Shea butter processing to high quality to meet local and international standards.',
       },
       {
-        title: '100,000 Shea Trees',
-        description: 'Own Shea Tree Parkland with estimated 100,000 wild shea trees.',
+        title: 'Strategic Shea Assets',
+        description: 'Holds strategic shea assets in Nigeria for significant market participation.',
       },
       {
-        title: 'First Processing Centre',
-        description: 'First shea post harvesting and processing centre in Bida, Niger State.',
+        title: 'Distribution Network',
+        description: 'Established distribution network and international off-take agreements.',
       },
       {
-        title: 'Mechanized Farming',
-        description: 'Invested in tractors, threshers, and weeders for enhanced performance.',
+        title: 'Ethical Sourcing',
+        description: 'Committed to ethical sourcing and empowering women in the shea industry.',
       },
     ],
-    image: '/farming-1.jpg',
-    images: ['/farming-1.jpg', '/farmers.jpg', '/oil_palm.jpg'],
+    image: '/shea.jpg',
+    images: ['/shea.jpg', '/farmers.jpg'],
   },
   {
     id: 'construction',
     title: 'Construction Engineering',
     shortTitle: 'Construction',
     description:
-      'JIL contributes to sustainable development. We are recognized for offering engineering construction services to Federal and State Governments, Private companies, oil & gas pipeline companies, public works agencies, municipalities and commercial/residential real estate developers.',
-    fullDescription:
-      'Drawing from our expertise in construction management and engineering, we are able to leverage our process-centric business model to deliver a variety of projects for satisfied clients. We work with Federal and State Governments, private companies, oil & gas pipeline companies, public works agencies, municipalities and commercial/residential real estate developers.',
+      'Juggernaut Industries Ltd delivers high-quality construction and civil engineering solutions across Nigeria, with a strong portfolio of successfully completed projects for both Federal Government and private sector clients.',
+    fullDescription: [
+      'Juggernaut Industries Ltd delivers high-quality construction and civil engineering solutions across Nigeria, with a strong portfolio of successfully completed projects for both Federal Government and private sector clients.',
+      'Underpinned by a team of COREN-registered engineers with decades of combined experience, JIL brings technical rigour, professional excellence, and a commitment to delivering projects on time and within specification.',
+      'From concept to completion, the company applies industry best practices to every engagement, ensuring durable, compliant, and high-impact infrastructure outcomes for its clients.',
+    ],
     icon: 'Building2',
     color: 'industrial-gold',
     href: '/services/construction',
@@ -249,32 +244,36 @@ export const services: Service[] = [
     ],
     highlights: [
       {
-        title: 'Government Projects',
-        description: 'Recognized partner for Federal and State Government construction projects.',
+        title: 'COREN-Registered Engineers',
+        description: 'Team of COREN-registered engineers with decades of combined experience.',
       },
       {
-        title: 'Oil & Gas Infrastructure',
-        description: 'Experience with oil & gas pipeline companies and related infrastructure.',
+        title: 'Government & Private Clients',
+        description: 'Strong portfolio for both Federal Government and private sector clients.',
       },
       {
-        title: 'Process-Centric Model',
-        description: 'Leverage our business model to deliver variety of projects efficiently.',
+        title: 'On Time Delivery',
+        description: 'Commitment to delivering projects on time and within specification.',
       },
       {
-        title: 'Sustainable Development',
-        description: 'Contributing to sustainable development across Nigeria.',
+        title: 'Industry Best Practices',
+        description: 'Durable, compliant, and high-impact infrastructure outcomes.',
       },
     ],
-    image: '/construction.jpg',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop',
+    images: ['https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop', '/construction.jpg'],
   },
   {
     id: 'solar',
-    title: 'Solar & Electrification',
-    shortTitle: 'Solar',
+    title: 'Renewable Energy',
+    shortTitle: 'Renewable Energy',
     description:
-      'JIL has successfully undertaken and completed Solar and Electrification projects across Nigeria. We have built solar street lights and installed different capacity transformers for our clients including Federal and State Governments of Nigeria.',
-    fullDescription:
-      'We have experienced and trained technicians which enables us to work in remote locations anywhere in Nigeria. Our solar and electrification division has successfully completed projects for both Federal and State Governments, bringing power to communities across the nation through sustainable energy solutions.',
+      'Juggernaut Industries Ltd delivers reliable solar and electrification solutions across Nigeria, with a proven track record of successfully completed projects for Federal Government and private sector clients.',
+    fullDescription: [
+      'Juggernaut Industries Ltd delivers reliable solar and electrification solutions across Nigeria, with a proven track record of successfully completed projects for Federal Government and private sector clients.',
+      'From solar street lighting to transformer installation across varying capacities, JIL brings technical expertise and a commitment to sustainable energy to every project.',
+      'Supported by a team of experienced and trained technicians, JIL is equipped to operate effectively in remote locations nationwide, ensuring that communities and private clients alike gain access to dependable and sustainable power infrastructure.',
+    ],
     icon: 'Sun',
     color: 'energy-teal',
     href: '/services/solar-energy',
@@ -282,7 +281,7 @@ export const services: Service[] = [
       'Solar Street Lights',
       'Rural Electrification',
       'Transformer Installation',
-      'Renewable Energy Solutions',
+      'Sustainable Energy Solutions',
       'Government Projects',
       'Remote Location Expertise',
     ],
@@ -305,46 +304,7 @@ export const services: Service[] = [
       },
     ],
     image: '/solar_installation.jpg',
-  },
-  {
-    id: 'oilgas',
-    title: 'Oil & Gas Services',
-    shortTitle: 'Oil & Gas',
-    description:
-      'Our oil and gas division provides comprehensive services to the energy sector, supporting Nigeria\'s position as a major energy producer with quality services and expertise.',
-    fullDescription:
-      'Our oil and gas division provides comprehensive services to the energy sector, supporting Nigeria\'s position as a major energy producer. We bring the same commitment to excellence and professionalism that defines all our operations to every oil and gas project we undertake.',
-    icon: 'Fuel',
-    color: 'rust',
-    href: '/services/oil-gas',
-    features: [
-      'Upstream Services',
-      'Downstream Operations',
-      'Equipment Supply',
-      'Technical Consulting',
-      'Safety Compliance',
-      'Pipeline Services',
-    ],
-    highlights: [
-      {
-        title: 'Energy Sector Expertise',
-        description: 'Comprehensive services supporting Nigeria\'s energy production.',
-      },
-      {
-        title: 'Quality Standards',
-        description: 'Same commitment to excellence across all oil and gas operations.',
-      },
-      {
-        title: 'Technical Consulting',
-        description: 'Expert consulting services for upstream and downstream operations.',
-      },
-      {
-        title: 'Safety First',
-        description: 'Strict safety compliance in all our oil and gas activities.',
-      },
-    ],
-    image: '/drilling-2.jpg',
-    images: ['/drilling-2.jpg', '/drill-rig.jpg', '/site-prep.jpg'],
+    images: ['/solar_installation.jpg', 'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800&auto=format&fit=crop'],
   },
 ];
 
@@ -358,7 +318,6 @@ export const getServiceBySlug = (slug: string): Service | undefined => {
     agriculture: 'agriculture',
     construction: 'construction',
     'solar-energy': 'solar',
-    'oil-gas': 'oilgas',
   };
   const id = slugMap[slug];
   return id ? getServiceById(id) : undefined;

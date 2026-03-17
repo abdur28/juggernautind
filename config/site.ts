@@ -26,7 +26,7 @@ export const siteConfig = {
     instagram: '',
   },
   vision:
-    'To be the leading Nigerian mining & exploration services company, known for its Excellence, People and Values.',
+    "To be Nigeria's leading multidisciplinary services company, recognised for unwavering excellence, the quality of our people, and the strength of our values.",
   mission:
     'To become the preferred company of choice in the hearts and minds of our clients and customers recognized for providing quality and reliable products and services.',
 };
@@ -39,7 +39,6 @@ export const navigation = {
       href: '/about',
       submenu: [
         { label: 'Who We Are', href: '/about', description: 'Our company profile and values' },
-        { label: 'Our Story', href: '/about/our-story', description: 'Journey since 2006' },
         { label: 'Team', href: '/about/team', description: 'Meet our leadership' },
       ],
     },
@@ -48,10 +47,9 @@ export const navigation = {
       href: '/services',
       submenu: [
         { label: 'Mining & Exploration', href: '/services/mining', description: 'Mineral exploration services' },
-        { label: 'Agriculture', href: '/services/agriculture', description: 'Farm production & processing' },
+        { label: 'Agriculture & Agro-Processing', href: '/services/agriculture', description: 'Shea butter processing & export' },
         { label: 'Construction', href: '/services/construction', description: 'Infrastructure development' },
-        { label: 'Solar Energy', href: '/services/solar-energy', description: 'Renewable energy solutions' },
-        { label: 'Oil & Gas', href: '/services/oil-gas', description: 'Energy sector services' },
+        { label: 'Renewable Energy', href: '/services/solar-energy', description: 'Solar & electrification solutions' },
       ],
     },
     { label: 'Projects', href: '/projects' },
@@ -67,10 +65,9 @@ export const navigation = {
   ],
   services: [
     { label: 'Mining & Exploration', href: '/services/mining', icon: 'Pickaxe' },
-    { label: 'Agriculture', href: '/services/agriculture', icon: 'Leaf' },
+    { label: 'Agriculture & Agro-Processing', href: '/services/agriculture', icon: 'Leaf' },
     { label: 'Construction', href: '/services/construction', icon: 'Building2' },
-    { label: 'Solar Energy', href: '/services/solar-energy', icon: 'Sun' },
-    { label: 'Oil & Gas', href: '/services/oil-gas', icon: 'Fuel' },
+    { label: 'Renewable Energy', href: '/services/solar-energy', icon: 'Sun' },
   ],
   footer: {
     company: [
@@ -81,10 +78,9 @@ export const navigation = {
     ],
     services: [
       { label: 'Mining & Exploration', href: '/services/mining' },
-      { label: 'Agriculture', href: '/services/agriculture' },
+      { label: 'Agriculture & Agro-Processing', href: '/services/agriculture' },
       { label: 'Construction', href: '/services/construction' },
-      { label: 'Solar Energy', href: '/services/solar-energy' },
-      { label: 'Oil & Gas', href: '/services/oil-gas' },
+      { label: 'Renewable Energy', href: '/services/solar-energy' },
     ],
     legal: [
       { label: 'Privacy Policy', href: '/privacy' },
@@ -97,18 +93,18 @@ export const navigation = {
 export const stats = [
   { value: 20, suffix: '+', label: 'Years Experience', description: 'Since 2006' },
   { value: 5, suffix: '+', label: 'Major Projects', description: 'Government & Private' },
-  { value: 5, suffix: '', label: 'Industry Sectors', description: 'Diversified Services' },
+  { value: 4, suffix: '', label: 'Industry Sectors', description: 'Diversified Services' },
   { value: 100, suffix: '%', label: 'Nigerian Owned', description: 'Indigenous Company' },
 ];
 
 export const heroContent = {
-  eyebrow: 'Since 2006 • Abuja, Nigeria',
+  eyebrow: 'Since 2006 • RC 657541 • Abuja, Nigeria',
   headline: ['JUGGERNAUT', 'INDUSTRIES'],
   tagline: 'Mining & Exploration',
   taglineAccent: 'Services',
   subheadline: "Building Africa's mineral future",
   description:
-    'An indigenous mineral exploration services company with a world class team experienced in the African terrain. We own our own drill rigs, geophysics equipment and in-house lab.',
+    'Juggernaut Industries Ltd (JIL) is a Nigerian conglomerate with diversified interests spanning mining & mineral exploration, agriculture, construction and renewable energy solutions. Incorporated in Abuja in 2006, JIL is led by a team with deep expertise and project delivery.',
   cta: {
     primary: { label: 'Explore Services', href: '/services' },
     secondary: { label: 'Contact Us', href: '/contact' },
@@ -128,9 +124,9 @@ export const heroSlides = [
   {
     id: 'agriculture',
     image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop',
-    title: 'Agriculture',
-    subtitle: 'Farm Solutions',
-    description: 'Sustainable farming practices with modern equipment for crop production and processing.',
+    title: 'Agriculture & Agro-Processing',
+    subtitle: 'Shea Butter',
+    description: 'Strategic shea assets in Nigeria with post-harvesting and processing infrastructure for local and international markets.',
     link: { label: 'Explore Agriculture', href: '/services/agriculture' },
   },
   {
@@ -144,10 +140,10 @@ export const heroSlides = [
   {
     id: 'solar',
     image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop',
-    title: 'Solar Energy',
-    subtitle: 'Renewable Power',
-    description: 'Clean, sustainable energy solutions powering homes and businesses across Nigeria.',
-    link: { label: 'Explore Solar', href: '/services/solar-energy' },
+    title: 'Renewable Energy',
+    subtitle: 'Solar & Electrification',
+    description: 'Reliable solar and electrification solutions with a proven track record across Nigeria.',
+    link: { label: 'Explore Renewable Energy', href: '/services/solar-energy' },
   },
 ];
 

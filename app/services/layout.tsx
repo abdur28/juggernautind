@@ -3,13 +3,12 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Our Services – Mining, Agriculture, Construction & Energy',
   description:
-    'Explore Juggernaut Industries\' comprehensive services including Mining & Exploration, Agriculture, Construction, Solar Energy, and Oil & Gas across Nigeria.',
+    'Explore Juggernaut Industries\' comprehensive services including Mining & Exploration, Agriculture & Agro-Processing, Construction, and Renewable Energy across Nigeria.',
   keywords: [
     'mining services Nigeria',
     'agricultural services Abuja',
     'construction company Nigeria',
-    'solar energy Nigeria',
-    'oil and gas services',
+    'renewable energy Nigeria',
     'mineral exploration Nigeria',
   ],
   openGraph: {
