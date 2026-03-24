@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { heroContent, heroSlides, stats } from '@/config/site';
@@ -47,34 +46,13 @@ export function HeroFlow({ className }: HeroFlowProps) {
         className
       )}
     >
-      {/* Background Images with Smooth Crossfade */}
+      {/* Background Gradient */}
       <div className="absolute inset-0">
-        {/* All images stacked - current one fades in on top */}
-        {heroSlides.map((slide, index) => (
-          <motion.div
-            key={slide.id}
-            initial={false}
-            animate={{
-              opacity: currentSlide === index ? 1 : 0,
-              scale: currentSlide === index ? 1 : 1.05,
-            }}
-            transition={{ duration: 1.5, ease: [0.4, 0, 0.2, 1] }}
-            className="absolute inset-0"
-            style={{ zIndex: currentSlide === index ? 1 : 0 }}
-          >
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              fill
-              className="object-cover"
-              priority={index === 0}
-            />
-          </motion.div>
-        ))}
-
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-navy/60 via-deep-navy/50 to-deep-navy z-[2]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-deep-navy/70 via-transparent to-transparent z-[2]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-deep-navy via-steel-blue/30 to-deep-navy" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-industrial-gold/5 to-transparent" />
+        {/* Subtle radial glow */}
+        <div className="absolute top-1/4 -left-1/4 w-[60%] h-[60%] bg-steel-blue/15 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 -right-1/4 w-[50%] h-[50%] bg-industrial-gold/8 rounded-full blur-[100px]" />
       </div>
 
       {/* Main Content */}
