@@ -9,11 +9,15 @@ import { GoldDot } from '@/components/ui/gold-dot';
 import { ScrollReveal, StaggerReveal, StaggerItem } from '@/components/animations/scroll-reveal';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import Image from 'next/image';
+import { CTASection } from '../sections';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
+    <>
+    <CTASection />
+
     <footer className="bg-near-black relative overflow-hidden">
       {/* Large Background Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -187,5 +191,6 @@ export function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

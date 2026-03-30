@@ -28,7 +28,7 @@ export default function HomePage() {
       {/* <NewsSection limit={3} showFeatured={true} /> */}
 
       {/* CTA Section - Contact form, flows into footer */}
-      <CTASection />
+
     </>
   );
 }

@@ -104,7 +104,7 @@ export const heroContent = {
   taglineAccent: 'Services',
   subheadline: "Building Africa's mineral future",
   description:
-    'Juggernaut Industries Limited (JIL) is an indigenous, multidisciplinary services company incorporated in Nigeria in 2006. With more than two decades of operational experience, JIL has grown into a diversified group delivering excellence across mineral exploration, energy, construction, and agribusiness sectors.',
+    'Welcome to JIL, a leading nigerian multidisciplinary service company',
   cta: {
     primary: { label: 'Explore Services', href: '/services' },
     secondary: { label: 'Contact Us', href: '/contact' },

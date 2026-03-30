@@ -319,7 +319,7 @@ export default function GalleryPage() {
 
         <div className="container-jil relative z-10">
           {/* Category Filter */}
-          <div className="mb-12">
+          {/* <div className="mb-12">
             <ScrollReveal animation="fadeUp">
               <div className="flex flex-wrap justify-center gap-3">
                 {categories.map((category) => (
@@ -337,7 +337,7 @@ export default function GalleryPage() {
                 ))}
               </div>
             </ScrollReveal>
-          </div>
+          </div> */}
 
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

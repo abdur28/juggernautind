@@ -58,7 +58,7 @@ export default function AboutPage() {
             {/* Left - Content */}
             <div className="space-y-8 order-2 lg:order-1">
               {/* Header */}
-              <ScrollReveal animation="fadeUp">
+              {/* <ScrollReveal animation="fadeUp">
                 <div className="space-y-4">
                   <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold">
                     <span className="w-8 h-px bg-industrial-gold" />
@@ -66,7 +66,7 @@ export default function AboutPage() {
                   </span>
                   
                 </div>
-              </ScrollReveal>
+              </ScrollReveal> */}
 
               {/* Main Description */}
               <ScrollReveal animation="fadeUp" delay={0.1}>
@@ -248,7 +248,7 @@ export default function AboutPage() {
               <div className="sticky top-24">
                 <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/event-12.jpg"
+                    src="/mining-4.jpeg"
                     alt="Team collaboration at Juggernaut Industries"
                     fill
                     className="object-cover"
@@ -292,9 +292,12 @@ export default function AboutPage() {
                       key={index}
                       className="p-4 rounded-xl bg-off-white/50 border border-steel-blue/5 hover:border-industrial-gold/20 transition-colors"
                     >
-                      <h4 className="font-heading text-sm tracking-[0.1em] uppercase text-deep-navy mb-2">
-                        {value.title}
-                      </h4>
+                      <div className='flex flex-row gap-3'>
+                          <div className="w-1 h-5 bg-industrial-gold rounded-full" />
+                          <h4 className="font-heading text-sm tracking-[0.1em] uppercase text-deep-navy mb-2">
+                            {value.title}
+                          </h4>
+                      </div>
                       <p className="text-steel-blue text-sm leading-relaxed">
                         {value.description}
                       </p>

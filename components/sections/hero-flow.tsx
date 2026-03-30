@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { heroContent, heroSlides, stats } from '@/config/site';
 import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ScrollReveal } from '../animations';
+import Image from 'next/image';
 
 interface HeroFlowProps {
   className?: string;
@@ -59,9 +61,9 @@ export function HeroFlow({ className }: HeroFlowProps) {
       <div className="relative z-10 flex-1 flex flex-col pt-28 md:pt-36 lg:pt-40">
         <div className="container-jil min-h-[100vh] flex-1 flex flex-col">
           {/* Hero Grid - Main Content */}
-          <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center py-8">
+          <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-8">
             {/* Left - Typography */}
-            <div className="lg:col-span-7 space-y-4">
+            <div className=" space-y-4">
               {/* Eyebrow */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -75,7 +77,7 @@ export function HeroFlow({ className }: HeroFlowProps) {
               </motion.div>
 
               {/* Main Headline - Stacked */}
-              <div className="space-y-0">
+              {/* <div className="space-y-0">
                 <motion.h1
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -92,14 +94,14 @@ export function HeroFlow({ className }: HeroFlowProps) {
                 >
                   INDUSTRIES LTD
                 </motion.h1>
-              </div>
+              </div> */}
 
               {/* Subheadline */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="text pt-10 text-light-gray max-w-md font-light leading-relaxed"
+                className="text-4xl  text-light-gray max-w-lg font-light leading-relaxed"
               >
                 {heroContent.description}
               </motion.p>
@@ -118,18 +120,24 @@ export function HeroFlow({ className }: HeroFlowProps) {
                   {heroContent.cta.primary.label}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link
-                  href={heroContent.cta.secondary.href}
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-industrial-gold/50 text-industrial-gold font-heading text-xs tracking-[0.1em] uppercase rounded-xl btn-animated relative z-1 overflow-hidden after:bg-industrial-gold hover:text-near-black transition-colors"
-                >
-                  {heroContent.cta.secondary.label}
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
               </motion.div>
             </div>
 
+            <ScrollReveal animation="fadeUp" className=''>
+            <div className="relative aspect-square w-full md:h-[500px] lg:h-[70vh] rounded-xl overflow-hidden">
+              <Image
+                src="/mining-2.jpeg"
+                alt="Mining exploration site"
+                fill
+                className="object-cover"
+              />
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/60 via-transparent to-transparent" />
+            </div>
+          </ScrollReveal>
+
             {/* Right - Floating Card with Dynamic Content */}
-            <div className="lg:col-span-5  h-full flex items-end justify-end lg:justify-end">
+            {/* <div className="lg:col-span-5  h-full flex items-end justify-end lg:justify-end">
               <motion.div
                 initial={{ opacity: 0, y: 60, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -138,7 +146,7 @@ export function HeroFlow({ className }: HeroFlowProps) {
               >
                 <div className="bg-steel-blue/10 backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-2xl">
                   {/* Card Content - Animated on slide change */}
-                  <AnimatePresence mode="wait">
+                  {/* <AnimatePresence mode="wait">
                     <motion.div
                       key={currentSlide}
                       initial={{ opacity: 0, y: 20 }}
@@ -164,7 +172,7 @@ export function HeroFlow({ className }: HeroFlowProps) {
                         <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </motion.div>
-                  </AnimatePresence>
+                  </AnimatePresence> */}
 
                   {/* Slide Indicators */}
                   {/* <div className="flex items-center gap-2 mt-6 pt-4 border-t border-white/10">
@@ -182,9 +190,9 @@ export function HeroFlow({ className }: HeroFlowProps) {
                       />
                     ))}
                   </div> */}
-                </div>
+                {/* </div>
               </motion.div>
-            </div>
+            </div>  */}
           </div>
 
           {/* Bottom Section - Stats */}

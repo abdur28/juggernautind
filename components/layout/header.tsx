@@ -47,10 +47,10 @@ export function Header() {
         )}
       >
         <div className="container-jil">
-          <nav className="flex items-center justify-between h-20 md:h-24">
+          <nav className="flex items-center justify-between h-24 md:h-32">
             {/* Logo */}
             <Link href="/" className="flex flex-col items-center group">
-              <div className="relative w-10 h-10 md:w-12 md:h-12">
+              <div className="relative w-14 h-14 md:w-16 md:h-16">
                 <Image
                   src="/logo.png"
                   alt="Juggernaut Industries Logo"
@@ -60,10 +60,10 @@ export function Header() {
                 />
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-display text-base md:text-2xl font-semibold text-off-white tracking-wide group-hover:text-industrial-gold transition-colors leading-[0.8em]">
+                <span className="font-display text-lg md:text-2xl font-semibold text-off-white tracking-wide group-hover:text-industrial-gold transition-colors leading-[0.8em]">
                   JUGGERNAUT
                 </span>
-                <span className="text-[7px] md:text-[10px] font-heading tracking-[0.2em] text-mid-gray uppercase">
+                <span className="text-[9px] md:text-[10px] font-heading tracking-[0.2em] text-mid-gray uppercase">
                   Industries Ltd
                 </span>
               </div>
