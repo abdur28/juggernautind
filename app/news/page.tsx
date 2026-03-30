@@ -13,7 +13,7 @@ export default function NewsPage() {
     <>
       {/* Page Header */}
       <PageHeader
-        title="NEWS & INSIGHTS"
+        title="NEWS & EVENTS"
         subtitle="Stay updated with the latest developments, projects, and achievements from Juggernaut Industries Limited."
         breadcrumbs={[
           { label: 'Home', href: '/' },

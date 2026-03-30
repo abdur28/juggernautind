@@ -89,7 +89,7 @@ export default function ProjectsPage() {
               <div className="sticky top-24">
                 <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/mining-3.jpeg"
+                    src="/mining-2.jpeg"
                     alt="Juggernaut Industries project site"
                     fill
                     className="object-cover"

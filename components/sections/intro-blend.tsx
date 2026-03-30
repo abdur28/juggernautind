@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { GoldDot } from '@/components/ui/gold-dot';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 interface IntroBlendProps {
   className?: string;
@@ -115,10 +117,23 @@ export function IntroBlend({ className }: IntroBlendProps) {
               <p className="text-light-gray leading-relaxed">
                 {aboutContent.description}
               </p>
-              <p className="text-light-gray leading-relaxed">
-                {aboutContent.description2}
-              </p>
             </ScrollReveal>
+
+            {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="flex flex-wrap items-center gap-4 pt-2"
+              >
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-industrial-gold text-near-black font-heading text-xs tracking-[0.1em] uppercase rounded-xl btn-animated relative z-1 overflow-hidden after:bg-steel-blue hover:text-off-white transition-colors"
+                >
+                  Read More
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
 
             {/* Divider */}
             <div className="h-px bg-white/10" />
@@ -154,7 +169,7 @@ export function IntroBlend({ className }: IntroBlendProps) {
         </div>
 
         {/* Large Brand Text as Section Divider */}
-        <HorizontalParallaxText />
+        {/* <HorizontalParallaxText /> */}
       </div>
     </section>
   );

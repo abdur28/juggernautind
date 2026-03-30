@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'Explore Juggernaut Industries\' comprehensive services including Mining & Exploration, Agriculture & Agro-Processing, Construction, and Renewable Energy across Nigeria.',
   keywords: [
     'mining services Nigeria',
-    'agricultural services Abuja',
+    // 'agricultural services Abuja',
     'construction company Nigeria',
     'renewable energy Nigeria',
     'mineral exploration Nigeria',

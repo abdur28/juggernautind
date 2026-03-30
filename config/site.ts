@@ -47,7 +47,7 @@ export const navigation = {
       href: '/services',
       submenu: [
         { label: 'Mining & Exploration', href: '/services/mining', description: 'Mineral exploration services' },
-        { label: 'Agriculture & Agro-Processing', href: '/services/agriculture', description: 'Shea butter processing & export' },
+        // { label: 'Agriculture & Agro-Processing', href: '/services/agriculture', description: 'Shea butter processing & export' },
         { label: 'Construction', href: '/services/construction', description: 'Infrastructure development' },
         { label: 'Renewable Energy', href: '/services/solar-energy', description: 'Solar & electrification solutions' },
       ],
@@ -65,7 +65,7 @@ export const navigation = {
   ],
   services: [
     { label: 'Mining & Exploration', href: '/services/mining', icon: 'Pickaxe' },
-    { label: 'Agriculture & Agro-Processing', href: '/services/agriculture', icon: 'Leaf' },
+    // { label: 'Agriculture & Agro-Processing', href: '/services/agriculture', icon: 'Leaf' },
     { label: 'Construction', href: '/services/construction', icon: 'Building2' },
     { label: 'Renewable Energy', href: '/services/solar-energy', icon: 'Sun' },
   ],
@@ -78,7 +78,7 @@ export const navigation = {
     ],
     services: [
       { label: 'Mining & Exploration', href: '/services/mining' },
-      { label: 'Agriculture & Agro-Processing', href: '/services/agriculture' },
+      // { label: 'Agriculture & Agro-Processing', href: '/services/agriculture' },
       { label: 'Construction', href: '/services/construction' },
       { label: 'Renewable Energy', href: '/services/solar-energy' },
     ],
@@ -92,8 +92,8 @@ export const navigation = {
 
 export const stats = [
   { value: 20, suffix: '+', label: 'Years Experience', description: 'Since 2006' },
-  { value: 5, suffix: '+', label: 'Major Projects', description: 'Government & Private' },
-  { value: 4, suffix: '', label: 'Industry Sectors', description: 'Diversified Services' },
+  // { value: 5, suffix: '+', label: 'Major Projects', description: 'Government & Private' },
+  { value: 3, suffix: '', label: 'Industry Sectors', description: 'Diversified Services' },
   { value: 100, suffix: '%', label: 'Nigerian Owned', description: 'Indigenous Company' },
 ];
 
@@ -104,7 +104,7 @@ export const heroContent = {
   taglineAccent: 'Services',
   subheadline: "Building Africa's mineral future",
   description:
-    'Juggernaut Industries Ltd (JIL) is a Nigerian conglomerate with diversified interests spanning mining & mineral exploration, agriculture, construction and renewable energy solutions. Incorporated in Abuja in 2006, JIL is led by a team with deep expertise and project delivery.',
+    'Juggernaut Industries Limited (JIL) is an indigenous, multidisciplinary services company incorporated in Nigeria in 2006. With more than two decades of operational experience, JIL has grown into a diversified group delivering excellence across mineral exploration, energy, construction, and agribusiness sectors.',
   cta: {
     primary: { label: 'Explore Services', href: '/services' },
     secondary: { label: 'Contact Us', href: '/contact' },
@@ -121,30 +121,30 @@ export const heroSlides = [
     description: 'Expert mineral exploration with our own drill rigs, geophysics equipment and in-house laboratory.',
     link: { label: 'Explore Mining', href: '/services/mining' },
   },
-  {
-    id: 'agriculture',
-    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop',
-    title: 'Agriculture & Agro-Processing',
-    subtitle: 'Shea Butter',
-    description: 'Strategic shea assets in Nigeria with post-harvesting and processing infrastructure for local and international markets.',
-    link: { label: 'Explore Agriculture', href: '/services/agriculture' },
-  },
-  {
-    id: 'construction',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop',
-    title: 'Construction',
-    subtitle: 'Infrastructure',
-    description: 'Building Nigeria\'s future with quality infrastructure and construction services.',
-    link: { label: 'Explore Construction', href: '/services/construction' },
-  },
-  {
-    id: 'solar',
-    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop',
-    title: 'Renewable Energy',
-    subtitle: 'Solar & Electrification',
-    description: 'Reliable solar and electrification solutions with a proven track record across Nigeria.',
-    link: { label: 'Explore Renewable Energy', href: '/services/solar-energy' },
-  },
+  // {
+  //   id: 'agriculture',
+  //   image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop',
+  //   title: 'Agriculture & Agro-Processing',
+  //   subtitle: 'Shea Butter',
+  //   description: 'Strategic shea assets in Nigeria with post-harvesting and processing infrastructure for local and international markets.',
+  //   link: { label: 'Explore Agriculture', href: '/services/agriculture' },
+  // },
+  // {
+  //   id: 'construction',
+  //   image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop',
+  //   title: 'Construction',
+  //   subtitle: 'Infrastructure',
+  //   description: 'Building Nigeria\'s future with quality infrastructure and construction services.',
+  //   link: { label: 'Explore Construction', href: '/services/construction' },
+  // },
+  // {
+  //   id: 'solar',
+  //   image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop',
+  //   title: 'Renewable Energy',
+  //   subtitle: 'Solar & Electrification',
+  //   description: 'Reliable solar and electrification solutions with a proven track record across Nigeria.',
+  //   link: { label: 'Explore Renewable Energy', href: '/services/solar-energy' },
+  // },
 ];
 
 // Thumbnail images for hero section

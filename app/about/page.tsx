@@ -64,12 +64,7 @@ export default function AboutPage() {
                     <span className="w-8 h-px bg-industrial-gold" />
                     About Juggernaut Industries
                   </span>
-                  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-deep-navy leading-[2.5rem]">
-                    BUILDING AFRICA&apos;S
-                    <span className="block text-xl md:text-2xl lg:text-3xl text-steel-blue tracking-[0.15em]">
-                      INDUSTRIAL FUTURE
-                    </span>
-                  </h2>
+                  
                 </div>
               </ScrollReveal>
 
@@ -85,7 +80,7 @@ export default function AboutPage() {
               </ScrollReveal>
 
               <ScrollReveal animation="fadeUp" delay={0.15}>
-                <p className="text-steel-blue leading-relaxed">
+                <p className="text-steel-blue leading-relaxed text-lg">
                   At the heart of JIL&apos;s success is a world-class team of local and international
                   professionals, bringing together a wealth of expertise and cross-cultural experience
                   that enables the company to operate effectively across diverse and challenging
@@ -102,7 +97,7 @@ export default function AboutPage() {
               <ScrollReveal animation="fadeUp" delay={0.2}>
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    'Own Drill Rigs & Equipment',
+
                     'In-House Laboratory',
                     'World Class Team',
                     'COREN-Registered Engineers',
@@ -130,7 +125,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right - Sticky Image */}
-            <ScrollReveal animation="fadeUp" className="order-1 lg:order-2">
+            {/* <ScrollReveal animation="fadeUp" className="order-1 lg:order-2">
               <div className="sticky top-24">
                 <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl">
                   <Image
@@ -142,6 +137,30 @@ export default function AboutPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/40 via-transparent to-transparent" />
                 </div>
               </div>
+            </ScrollReveal> */}
+            <ScrollReveal animation="fadeUp" className="order-2">
+              <div className="sticky top-24">
+                <div className="grid grid-cols-2 gap-1 aspect-square w-full">
+                  {[
+                    { src: '/mining-2.jpeg'  },
+                    { src: '/construction.jpg' },
+                    { src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop' },
+                    { src: '/solar_installation.jpg' },
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className={`relative overflow-hidden ${i === 0 ? 'rounded-tl-xl' : i === 1 ? 'rounded-tr-xl' : i === 2 ? 'rounded-bl-xl' : 'rounded-br-xl'}`}
+                    >
+                      <Image
+                        src={item.src}
+                        alt={item.src}
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -150,7 +169,7 @@ export default function AboutPage() {
       {/* Stats Section */}
       <section className="relative py-14 overflow-hidden bg-deep-navy">
         <div className="container-jil relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-6 lg:gap-8">
             {stats.map((stat, index) => (
               <ScrollReveal key={index} animation="fadeUp" delay={0.1 * index}>
                 <div className="text-center p-6 rounded-xl bg-steel-blue/10 border border-white/10">
@@ -183,13 +202,6 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="container-jil mb-12 md:mb-16">
-          <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold mb-3">
-            <span className="w-8 h-px bg-industrial-gold" />
-            Our Purpose
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl font-light text-deep-navy">VISION & MISSION</h2>
-        </div>
 
         <div className="container-jil relative z-10">
           {/* Vision & Mission Cards */}
@@ -236,7 +248,7 @@ export default function AboutPage() {
               <div className="sticky top-24">
                 <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/story.jpg"
+                    src="/event-12.jpg"
                     alt="Team collaboration at Juggernaut Industries"
                     fill
                     className="object-cover"
@@ -251,10 +263,6 @@ export default function AboutPage() {
               {/* Header */}
               <ScrollReveal animation="fadeUp">
                 <div className="space-y-4">
-                  <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-industrial-gold">
-                    <span className="w-8 h-px bg-industrial-gold" />
-                    What Drives Us
-                  </span>
                   <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-deep-navy leading-[2.5rem]">
                     OUR CORE
                     <span className="block text-xl md:text-2xl lg:text-3xl text-steel-blue tracking-[0.15em]">

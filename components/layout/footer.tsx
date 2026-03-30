@@ -8,6 +8,7 @@ import { StackedHeading } from '@/components/ui/stacked-heading';
 import { GoldDot } from '@/components/ui/gold-dot';
 import { ScrollReveal, StaggerReveal, StaggerItem } from '@/components/animations/scroll-reveal';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -27,16 +28,32 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             {/* Brand Column */}
             <ScrollReveal animation="fadeUp" className="lg:col-span-1">
-              <Link href="/" className="inline-block mb-6">
-                <h3 className="font-display text-3xl font-semibold text-off-white">
-                  JUGGERNAUT
-                </h3>
-                <p className="font-heading text-xs tracking-wider text-mid-gray uppercase mt-1">
-                  Industries Limited
-                </p>
-              </Link>
+            {/* Logo */}
 
-              <p className="text-body-sm text-mid-gray mb-6 max-w-xs">
+              <div className='flex flex-row items-start justify-start'>
+                <Link href="/" className="flex flex-col items-center group">
+                <div className="relative w-10 h-10 md:w-12 md:h-12">
+                  <Image
+                    src="/logo.png"
+                    alt="Juggernaut Industries Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="font-display text-base md:text-2xl font-semibold text-off-white tracking-wide group-hover:text-industrial-gold transition-colors leading-[0.8em]">
+                    JUGGERNAUT
+                  </span>
+                  <span className="text-[7px] md:text-[10px] font-heading tracking-[0.2em] text-mid-gray uppercase">
+                    Industries Ltd
+                  </span>
+                </div>
+              </Link>
+              </div>
+
+
+              <p className="text-body-sm text-mid-gray mb-6 mt-6 max-w-xs">
                 {siteConfig.description.slice(0, 150)}...
               </p>
 
@@ -53,7 +70,7 @@ export function Footer() {
                     <Linkedin className="w-5 h-5" />
                   </a>
                 )}
-                <a
+                {/* <a
                   href="#"
                   className="p-2 text-mid-gray hover:text-industrial-gold transition-colors"
                   aria-label="Facebook"
@@ -73,7 +90,7 @@ export function Footer() {
                   aria-label="Instagram"
                 >
                   <Instagram className="w-5 h-5" />
-                </a>
+                </a> */}
               </div>
             </ScrollReveal>
 

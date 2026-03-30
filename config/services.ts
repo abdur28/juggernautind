@@ -2,7 +2,6 @@
 
 export type ServiceSector =
   | 'mining'
-  | 'agriculture'
   | 'construction'
   | 'solar';
 
@@ -28,6 +27,7 @@ export interface Service {
 
 // Mining exploration services from PDF
 export const explorationServices = [
+  'JORC Reporting',
   'Literature Review & Public Domain',
   'Data Compilation',
   'Remote Sensing',
@@ -125,14 +125,14 @@ export const miningProcessSteps = [
 ];
 
 // Agriculture crops - focused on shea butter only
-export const agricultureCrops = [
-  {
-    name: 'Shea Butter',
-    description:
-      'Nigeria is the world\'s largest producer of shea nuts, contributing approximately 45% of global production. JIL holds strategic shea assets in Nigeria and has established post-harvesting and processing infrastructure, with shea butter processing to high quality standards to meet local and international markets.',
-    image: '/shea.jpg',
-  },
-];
+// export const agricultureCrops = [
+//   {
+//     name: 'Shea Butter',
+//     description:
+//       'Nigeria is the world\'s largest producer of shea nuts, contributing approximately 45% of global production. JIL holds strategic shea assets in Nigeria and has established post-harvesting and processing infrastructure, with shea butter processing to high quality standards to meet local and international markets.',
+//     image: '/shea.jpg',
+//   },
+// ];
 
 export const services: Service[] = [
   {
@@ -157,10 +157,10 @@ export const services: Service[] = [
       'JORC Reporting',
     ],
     highlights: [
-      {
-        title: 'Own Equipment',
-        description: 'We own our own drill rigs, geophysics equipment and in-house laboratory.',
-      },
+      // {
+      //   title: 'Own Equipment',
+      //   description: 'We own our own drill rigs, geophysics equipment and in-house laboratory.',
+      // },
       {
         title: 'International Standards',
         description: 'JORC and NI 43-101 format reporting and international best practices.',
@@ -177,49 +177,49 @@ export const services: Service[] = [
     image: '/mining-1.jpeg',
     images: ['/mining-1.jpeg', '/mining-2.jpeg', '/mining-3.jpeg', '/mineral.jpg', '/mineral-2.jpg'],
   },
-  {
-    id: 'agriculture',
-    title: 'Agriculture & Agro-Processing',
-    shortTitle: 'Agriculture & Agro-Processing',
-    description:
-      'Nigeria is the world\'s largest producer of shea nuts, contributing approximately 45% of global production. Juggernaut Industries Ltd holds strategic shea assets in Nigeria, positioning the company for significant participation in this growing market.',
-    fullDescription: [
-      'Nigeria is the world\'s largest producer of shea nuts, contributing approximately 45% of global production. Juggernaut Industries Ltd holds strategic shea assets in Nigeria, positioning the company for significant participation in this growing market.',
-      'JIL has established post-harvesting and processing infrastructure and is currently in the process of recommencing operations at a new facility, with a clear growth roadmap to scale production in the near term. The company has an established distribution network and existing international off-take and partnership agreements ready to support full-scale operations.',
-      'JIL remains committed to ethical sourcing, full compliance with Nigerian labour laws, and honouring the shea industry\'s long-standing tradition as a sector that empowers women.',
-    ],
-    icon: 'Leaf',
-    color: 'mining-green',
-    href: '/services/agriculture',
-    features: [
-      'Shea Butter Processing',
-      'Post-Harvesting Infrastructure',
-      'International Off-Take Agreements',
-      'Ethical Sourcing',
-      'Quality Standards Compliance',
-      'Export Services',
-    ],
-    highlights: [
-      {
-        title: 'Processing Machines & Lab',
-        description: 'Shea butter processing to high quality to meet local and international standards.',
-      },
-      {
-        title: 'Strategic Shea Assets',
-        description: 'Holds strategic shea assets in Nigeria for significant market participation.',
-      },
-      {
-        title: 'Distribution Network',
-        description: 'Established distribution network and international off-take agreements.',
-      },
-      {
-        title: 'Ethical Sourcing',
-        description: 'Committed to ethical sourcing and empowering women in the shea industry.',
-      },
-    ],
-    image: '/shea.jpg',
-    images: ['/shea.jpg', '/farmers.jpg'],
-  },
+  // {
+  //   id: 'agriculture',
+  //   title: 'Agriculture & Agro-Processing',
+  //   shortTitle: 'Agriculture & Agro-Processing',
+  //   description:
+  //     'Nigeria is the world\'s largest producer of shea nuts, contributing approximately 45% of global production. Juggernaut Industries Ltd holds strategic shea assets in Nigeria, positioning the company for significant participation in this growing market.',
+  //   fullDescription: [
+  //     'Nigeria is the world\'s largest producer of shea nuts, contributing approximately 45% of global production. Juggernaut Industries Ltd holds strategic shea assets in Nigeria, positioning the company for significant participation in this growing market.',
+  //     'JIL has established post-harvesting and processing infrastructure and is currently in the process of recommencing operations at a new facility, with a clear growth roadmap to scale production in the near term. The company has an established distribution network and existing international off-take and partnership agreements ready to support full-scale operations.',
+  //     'JIL remains committed to ethical sourcing, full compliance with Nigerian labour laws, and honouring the shea industry\'s long-standing tradition as a sector that empowers women.',
+  //   ],
+  //   icon: 'Leaf',
+  //   color: 'mining-green',
+  //   href: '/services/agriculture',
+  //   features: [
+  //     'Shea Butter Processing',
+  //     'Post-Harvesting Infrastructure',
+  //     'International Off-Take Agreements',
+  //     'Ethical Sourcing',
+  //     'Quality Standards Compliance',
+  //     'Export Services',
+  //   ],
+  //   highlights: [
+  //     {
+  //       title: 'Processing Machines & Lab',
+  //       description: 'Shea butter processing to high quality to meet local and international standards.',
+  //     },
+  //     {
+  //       title: 'Strategic Shea Assets',
+  //       description: 'Holds strategic shea assets in Nigeria for significant market participation.',
+  //     },
+  //     {
+  //       title: 'Distribution Network',
+  //       description: 'Established distribution network and international off-take agreements.',
+  //     },
+  //     {
+  //       title: 'Ethical Sourcing',
+  //       description: 'Committed to ethical sourcing and empowering women in the shea industry.',
+  //     },
+  //   ],
+  //   image: '/shea.jpg',
+  //   images: ['/shea.jpg', '/farmers.jpg'],
+  // },
   {
     id: 'construction',
     title: 'Construction Engineering',
@@ -261,7 +261,7 @@ export const services: Service[] = [
       },
     ],
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop', '/construction.jpg'],
+    images: ['https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop'],
   },
   {
     id: 'solar',
@@ -315,7 +315,7 @@ export const getServiceById = (id: ServiceSector): Service | undefined => {
 export const getServiceBySlug = (slug: string): Service | undefined => {
   const slugMap: Record<string, ServiceSector> = {
     mining: 'mining',
-    agriculture: 'agriculture',
+    // agriculture: 'agriculture',
     construction: 'construction',
     'solar-energy': 'solar',
   };

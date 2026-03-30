@@ -16,16 +16,16 @@ export default function HomePage() {
       <IntroBlend />
 
       {/* Services Section - Asymmetric layout with accordion */}
-      <ServicesAsymmetric />
+      {/* <ServicesAsymmetric /> */}
 
       {/* Projects Section - Full screen carousel with project overlays */}
-      <ProjectsCarousel />
+      {/* <ProjectsCarousel /> */}
 
       {/* HSE Policy Section */}
-      <HSEPolicySection />
+      {/* <HSEPolicySection /> */}
 
       {/* News Section - Latest updates with glassmorphism cards */}
-      <NewsSection limit={3} showFeatured={true} />
+      {/* <NewsSection limit={3} showFeatured={true} /> */}
 
       {/* CTA Section - Contact form, flows into footer */}
       <CTASection />

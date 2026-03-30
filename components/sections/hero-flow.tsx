@@ -167,7 +167,7 @@ export function HeroFlow({ className }: HeroFlowProps) {
                   </AnimatePresence>
 
                   {/* Slide Indicators */}
-                  <div className="flex items-center gap-2 mt-6 pt-4 border-t border-white/10">
+                  {/* <div className="flex items-center gap-2 mt-6 pt-4 border-t border-white/10">
                     {heroSlides.map((_, index) => (
                       <button
                         key={index}
@@ -181,7 +181,7 @@ export function HeroFlow({ className }: HeroFlowProps) {
                         aria-label={`Go to slide ${index + 1}`}
                       />
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             </div>
@@ -211,7 +211,7 @@ export function HeroFlow({ className }: HeroFlowProps) {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="bg-steel-blue/5 backdrop-blur-sm border border-white/5 rounded-xl py-6 px-4"
             >
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0">
+              <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-0">
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}

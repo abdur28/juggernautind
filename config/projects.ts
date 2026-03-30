@@ -30,8 +30,7 @@ export const projects: Project[] = [
     fullDescription:
       'Juggernaut Industries was appointed as consultants by the Nigerian Geological Survey Agency (NGSA) for comprehensive geological enhancement and development services. Our team conducted extensive surveys and analysis for Lead, Zinc, Silver, and Gold deposits, contributing to the national mineral resource database.',
     services: ['Geological Survey', 'Mineral Analysis', 'Resource Development', 'Technical Consulting'],
-    image: '/survey.jpg',
-    images: ['/survey.jpg', '/survey-1.jpg', '/survey-2.jpg'],
+    image: '/ngsa.jpg',
     href: '/projects/ngsa',
   },
   {
@@ -47,7 +46,7 @@ export const projects: Project[] = [
     fullDescription:
       'Juggernaut Industries successfully completed the installation of a Barite processing plant in the South-South region of Nigeria. This project aligns with the Federal Government vision to rapidly develop and support locally made Nigerian goods, contributing to the nation\'s industrial growth and self-sufficiency.',
     services: ['Plant Installation', 'Equipment Setup', 'Process Engineering', 'Commissioning'],
-    image: '/construction.jpg',
+    image: '/mineral-3.jpg',
     href: '/projects/ministry-solid-minerals',
   },
   {
