@@ -104,9 +104,9 @@ export const heroContent = {
   taglineAccent: 'Services',
   subheadline: "Building Africa's mineral future",
   description:
-    'Welcome to JIL, a leading nigerian multidisciplinary service company',
+    'Welcome to JIL, a leading multidisciplinary company specializing in mining exploration and drilling. We deliver reliable, efficient, and high-quality solutions tailored to every project, combining expertise with advanced technology that meets and we operate to international industry standards',
   cta: {
-    primary: { label: 'Explore Services', href: '/services' },
+    primary: { label: 'Learn More', href: '/about' },
     secondary: { label: 'Contact Us', href: '/contact' },
   },
 };

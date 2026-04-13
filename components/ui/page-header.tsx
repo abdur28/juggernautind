@@ -10,9 +10,9 @@ interface Breadcrumb {
 }
 
 interface PageHeaderProps {
-  title: string;
+  title?: string;
   subtitle?: string;
-  breadcrumbs: Breadcrumb[];
+  breadcrumbs?: Breadcrumb[];
   backgroundImage: string;
   className?: string;
 }
@@ -28,6 +28,7 @@ export function PageHeader({
     <section
       className={cn(
         'relative h-[50vh] min-h-[400px] overflow-hidden flex items-center justify-center',
+        !title && !breadcrumbs && 'h-[30vh] min-h-[300px]',
         className
       )}
     >
@@ -55,7 +56,7 @@ export function PageHeader({
       <div className="container-jil relative z-10 text-center">
         {/* Breadcrumbs */}
         <nav className="flex items-center justify-center gap-2 mb-6 max-w-4xl mx-auto">
-          {breadcrumbs.map((crumb, index) => (
+          {breadcrumbs && breadcrumbs.map((crumb, index) => (
             <div key={`${crumb.href}-${index}`} className="flex items-center gap-2 min-w-0">
               {index > 0 && <ChevronRight className="w-4 h-4 text-off-white/40 flex-shrink-0" />}
               <Link
@@ -74,9 +75,9 @@ export function PageHeader({
         </nav>
 
         {/* Title */}
-        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-off-white mb-4">
+        {title && <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-off-white mb-4">
           {title}
-        </h1>
+        </h1>}
 
       </div>
     </section>

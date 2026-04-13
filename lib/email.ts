@@ -110,7 +110,7 @@ function buildEmailHtml({
                 3 Wiser Estate, Off Regent School Road, Mabushi – Abuja, Nigeria
               </p>
               <p style="margin:4px 0 0; font-size:11px; color:#6B8CA4;">
-                +234 7052440133 &nbsp;|&nbsp; abdurrahmanidris235@gmail.com
+                +234 7052440133 &nbsp;|&nbsp; info@juggernautind.com
               </p>
             </td>
           </tr>

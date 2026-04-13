@@ -50,7 +50,7 @@ export function Header() {
           <nav className="flex items-center justify-between h-24 md:h-32">
             {/* Logo */}
             <Link href="/" className="flex flex-col items-center group">
-              <div className="relative w-14 h-14 md:w-16 md:h-16">
+              <div className="relative w-14 h-14 md:w-20 md:h-20">
                 <Image
                   src="/logo.png"
                   alt="Juggernaut Industries Logo"

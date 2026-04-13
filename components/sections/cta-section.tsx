@@ -6,12 +6,16 @@ import { cn } from '@/lib/utils';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
 import { siteConfig } from '@/config/site';
 import { ArrowRight, Mail, Phone, Loader2, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 interface CTASectionProps {
   className?: string;
 }
 
 export function CTASection({ className }: CTASectionProps) {
+  const pathname = usePathname();
+  const isNewsRoute = pathname === '/news';
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -57,9 +61,10 @@ export function CTASection({ className }: CTASectionProps) {
     >
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/conference.jpg"
           alt="JIL Conference"
+          fill
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-deep-navy/95 via-deep-navy/90 to-near-black" />
@@ -82,7 +87,7 @@ export function CTASection({ className }: CTASectionProps) {
           <ScrollReveal animation="fadeUp">
             <div className="mb-8">
               <h2 className="font-display text-3xl md:text-4xl lg:text-6xl font-light text-off-white leading-tight mb-4">
-                LET'S BUILD
+                LET&apos;S BUILD
                 <span className="block text-industrial-gold mt-2">SOMETHING GREAT</span>
               </h2>
               <p className="text-light-gray text-lg md:text-xl max-w-2xl mx-auto">
@@ -92,30 +97,38 @@ export function CTASection({ className }: CTASectionProps) {
           </ScrollReveal>
 
           {/* CTA Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className={cn(
+            "grid gap-6 mb-12 items-stretch h-full w-full",
+            isNewsRoute ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-xl mx-auto"
+          )}>
             {/* Contact Button Card */}
-            <ScrollReveal animation="fadeUp" delay={0.1}>
+            <ScrollReveal animation="fadeUp" delay={0.1} className="h-full">
               <div className="bg-steel-blue/10 backdrop-blur-xl border border-white/10 rounded-xl p-8 text-center hover:bg-steel-blue/20 transition-all duration-300 h-full flex flex-col justify-between">
                 <div>
                   <h3 className="font-display text-2xl font-semibold text-off-white mb-3">
                     Start a Project
                   </h3>
                   <p className="text-light-gray text-sm mb-6">
-                    Let's discuss your requirements and explore how we can help bring your vision to life.
+                    Let&apos;s discuss your requirements and explore how we can help bring your vision to life.
                   </p>
                 </div>
+              <div
+                className="flex flex-wrap justify-center items-center gap-4 pt-2"
+              >
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-industrial-gold text-near-black font-heading text-sm tracking-[0.1em] uppercase rounded-xl btn-animated relative z-1 overflow-hidden after:bg-steel-blue hover:text-off-white transition-colors w-full"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-industrial-gold text-near-black font-heading text-xs tracking-[0.1em] uppercase rounded-xl btn-animated relative z-1 overflow-hidden after:bg-steel-blue hover:text-off-white transition-colors"
                 >
                   Contact Us
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
+              </div>
               </div>
             </ScrollReveal>
 
             {/* Newsletter Card */}
-            <ScrollReveal animation="fadeUp" delay={0.2}>
+            {isNewsRoute && (
+            <ScrollReveal animation="fadeUp" delay={0.2} className="h-full">
               <div className="bg-steel-blue/10 backdrop-blur-xl border border-white/10 rounded-xl p-8 text-center h-full flex flex-col justify-between">
                 <div>
                   <h3 className="font-display text-2xl font-semibold text-off-white mb-3">
@@ -133,9 +146,10 @@ export function CTASection({ className }: CTASectionProps) {
                     <p className="text-light-gray text-xs mt-1">Check your inbox for a confirmation email.</p>
                     <button 
                       onClick={() => setIsSuccess(false)}
-                      className="text-industrial-gold text-xs mt-4 hover:underline"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-industrial-gold text-near-black font-heading text-xs tracking-[0.1em] uppercase rounded-xl btn-animated relative z-1 overflow-hidden after:bg-steel-blue hover:text-off-white transition-colors"
                     >
                       Subscribe another email
+                      <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
                 ) : (
@@ -151,7 +165,7 @@ export function CTASection({ className }: CTASectionProps) {
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-industrial-gold/50 text-industrial-gold font-heading text-sm tracking-[0.1em] uppercase rounded-xl btn-animated relative z-1 overflow-hidden after:bg-industrial-gold hover:text-near-black transition-colors w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-industrial-gold text-near-black font-heading text-xs tracking-[0.1em] uppercase rounded-xl btn-animated relative z-1 overflow-hidden after:bg-steel-blue hover:text-off-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoading ? (
                         <>
@@ -170,6 +184,7 @@ export function CTASection({ className }: CTASectionProps) {
                 )}
               </div>
             </ScrollReveal>
+            )}
           </div>
         </div>
       </div>

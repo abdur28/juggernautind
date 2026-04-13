@@ -59,10 +59,10 @@ export function IntroBlend({ className }: IntroBlendProps) {
           {/* Mission */}
           <ScrollReveal animation="fadeUp" delay={0.3}>
             <div className="bg-steel-blue/10 backdrop-blur-xl border border-white/10 rounded-xl p-6 h-full">
-              <h3 className="font-heading text-xs tracking-[0.15em] uppercase text-industrial-gold mb-3">
+              <h3 className="font-heading text-sm tracking-[0.15em] uppercase text-industrial-gold mb-3">
                 {aboutContent.mission.title}
               </h3>
-              <p className="text-base text-light-gray leading-relaxed">
+              <p className="text-lg text-light-gray leading-relaxed">
                 {aboutContent.mission.text}
               </p>
             </div>

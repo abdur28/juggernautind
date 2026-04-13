@@ -42,13 +42,13 @@ export default function AboutPage() {
     <>
       {/* Page Header */}
       <PageHeader
-        title="WHO WE ARE"
-        subtitle="An indigenous Nigerian company with a vision to be on the global listing of world class companies."
-        breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'About', href: '/about' },
-        ]}
-        backgroundImage="/drilling.jpg"
+        // title="WHO WE ARE"
+        // subtitle="An indigenous Nigerian company with a vision to be on the global listing of world class companies."
+        // breadcrumbs={[
+        //   { label: 'Home', href: '/' },
+        //   { label: 'About', href: '/about' },
+        // ]}
+        backgroundImage="/construction.jpg"
       />
 
       {/* Who We Are Section - Content Left, Image Right */}
@@ -69,17 +69,18 @@ export default function AboutPage() {
               </ScrollReveal> */}
 
               {/* Main Description */}
-              <ScrollReveal animation="fadeUp" delay={0.1}>
+              <ScrollReveal animation="fadeUp" delay={0.1} className="space-y-8">
+                <div className=" flex flex-col justify-start items-start">
+                  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-primary leading-[2.5rem]">
+                    WHO WE ARE
+                  </h2>
+                </div>
                 <p className="text-steel-blue leading-relaxed text-lg">
-                  <strong className="text-deep-navy">Juggernaut Industries Limited (JIL)</strong> is
-                  an indigenous, multidisciplinary services company incorporated in Nigeria in 2006
-                  under the Corporate Affairs Commission. With more than two decades of operational
-                  experience, JIL has grown into a diversified group delivering excellence across
-                  mineral exploration, energy, construction, and agribusiness sectors throughout Nigeria.
+                  <strong className="text-deep-navy">Juggernaut Industries Limited (JIL)</strong> is an indigenous Nigerian company delivering high‑quality services in mineral exploration, renewable energy, and construction engineering since 2006. Our skilled Nigerian team, supported by international specialists, combines strong local insight with world‑class technical capability to execute complex projects across the country. With a commitment to global standards in quality, safety, and performance, JIL continues to serve as a trusted partner in Nigeria’s industrial and economic development.
                 </p>
               </ScrollReveal>
 
-              <ScrollReveal animation="fadeUp" delay={0.15}>
+              {/* <ScrollReveal animation="fadeUp" delay={0.15}>
                 <p className="text-steel-blue leading-relaxed text-lg">
                   At the heart of JIL&apos;s success is a world-class team of local and international
                   professionals, bringing together a wealth of expertise and cross-cultural experience
@@ -88,7 +89,7 @@ export default function AboutPage() {
                   consistently meet and exceed the expectations of both government and private sector
                   clients, while adhering to the highest international standards.
                 </p>
-              </ScrollReveal>
+              </ScrollReveal> */}
 
               {/* Divider */}
               <div className="h-px bg-steel-blue/20" />
@@ -100,9 +101,10 @@ export default function AboutPage() {
 
                     'In-House Laboratory',
                     'World Class Team',
+                    'JORC - N1 43-101',
                     'COREN-Registered Engineers',
                     'Government & Private Clients',
-                    'International Standards',
+                    'Competent mining technicians (Local and International)',
                   ].map((highlight, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm text-steel-blue">
                       <GoldDot size="sm" />
@@ -110,10 +112,15 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </div>
+                {/* <div className="flex pt-3 items-center gap-2 text-sm text-steel-blue">
+                  <GoldDot size="sm" />
+                  <span>Qualified mining/ Technician and Engineer - local and international</span>
+                </div> */}
+                  
               </ScrollReveal>
 
               {/* CTA */}
-              <ScrollReveal animation="fadeUp" delay={0.25}>
+              {/* <ScrollReveal animation="fadeUp" delay={0.25}>
                 <Link
                   href="/about/team"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-industrial-gold text-near-black font-heading text-xs tracking-[0.1em] uppercase rounded-xl btn-animated relative z-1 overflow-hidden after:bg-steel-blue hover:text-off-white transition-colors"
@@ -121,7 +128,7 @@ export default function AboutPage() {
                   Meet Our Team
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-              </ScrollReveal>
+              </ScrollReveal> */}
             </div>
 
             {/* Right - Sticky Image */}
@@ -189,128 +196,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Vision & Mission Section - Full Width Cards */}
-      <section className="relative py-14 overflow-hidden bg-off-white">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, #0D1B2A 1px, transparent 0)`,
-              backgroundSize: '48px 48px',
-            }}
-          />
-        </div>
-
-
-        <div className="container-jil relative z-10">
-          {/* Vision & Mission Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-            {/* Vision Card */}
-            <ScrollReveal animation="fadeUp" delay={0.1}>
-              <div className="group h-full p-8 md:p-10 rounded-xl bg-white border border-steel-blue/10 shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-1 h-8 bg-industrial-gold rounded-full" />
-                  <h3 className="font-heading text-lg tracking-[0.1em] uppercase text-deep-navy">
-                    Our Vision
-                  </h3>
-                </div>
-                <p className="text-steel-blue leading-relaxed text-lg">
-                  {siteConfig.vision}
-                </p>
-              </div>
-            </ScrollReveal>
-
-            {/* Mission Card */}
-            <ScrollReveal animation="fadeUp" delay={0.2}>
-              <div className="group h-full p-8 md:p-10 rounded-xl bg-white border border-steel-blue/10 shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-1 h-8 bg-industrial-gold rounded-full" />
-                  <h3 className="font-heading text-lg tracking-[0.1em] uppercase text-deep-navy">
-                    Our Mission
-                  </h3>
-                </div>
-                <p className="text-steel-blue leading-relaxed text-lg">
-                  {siteConfig.mission}
-                </p>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values Section - Image Left, Content Right */}
-      <section className="relative py-14 overflow-hidden bg-white">
-        <div className="container-jil relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
-            {/* Left - Sticky Image */}
-            <ScrollReveal animation="fadeUp" className="order-2 lg:order-1">
-              <div className="sticky top-24">
-                <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/mining-4.jpeg"
-                    alt="Team collaboration at Juggernaut Industries"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/40 via-transparent to-transparent" />
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Right - Content */}
-            <div className="space-y-8 order-1 lg:order-2">
-              {/* Header */}
-              <ScrollReveal animation="fadeUp">
-                <div className="space-y-4">
-                  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-deep-navy leading-[2.5rem]">
-                    OUR CORE
-                    <span className="block text-xl md:text-2xl lg:text-3xl text-steel-blue tracking-[0.15em]">
-                      VALUES
-                    </span>
-                  </h2>
-                </div>
-              </ScrollReveal>
-
-              {/* Description */}
-              <ScrollReveal animation="fadeUp" delay={0.1}>
-                <p className="text-steel-blue leading-relaxed">
-                  Our values define who we are and guide every decision we make. They are the
-                  foundation of our commitment to excellence and our dedication to serving Africa
-                  and its people.
-                </p>
-              </ScrollReveal>
-
-              {/* Divider */}
-              <div className="h-px bg-steel-blue/20" />
-
-              {/* Values Grid */}
-              <ScrollReveal animation="fadeUp" delay={0.2}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {coreValues.map((value, index) => (
-                    <div
-                      key={index}
-                      className="p-4 rounded-xl bg-off-white/50 border border-steel-blue/5 hover:border-industrial-gold/20 transition-colors"
-                    >
-                      <div className='flex flex-row gap-3'>
-                          <div className="w-1 h-5 bg-industrial-gold rounded-full" />
-                          <h4 className="font-heading text-sm tracking-[0.1em] uppercase text-deep-navy mb-2">
-                            {value.title}
-                          </h4>
-                      </div>
-                      <p className="text-steel-blue text-sm leading-relaxed">
-                        {value.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Activities Section */}
+            {/* Our Activities Section */}
       <section className="relative py-14 overflow-hidden bg-deep-navy">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
@@ -380,6 +266,129 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Vision & Mission Section - Full Width Cards */}
+      <section className="relative py-14 overflow-hidden bg-off-white">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle at 2px 2px, #0D1B2A 1px, transparent 0)`,
+              backgroundSize: '48px 48px',
+            }}
+          />
+        </div>
+
+
+        <div className="container-jil relative z-10">
+          {/* Vision & Mission Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            {/* Vision Card */}
+            <ScrollReveal animation="fadeUp" delay={0.1}>
+              <div className="group h-full p-8 md:p-10 rounded-xl bg-white border border-steel-blue/10 shadow-sm hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-1 h-8 bg-industrial-gold rounded-full" />
+                  <h3 className="font-heading text-lg tracking-[0.1em] uppercase text-deep-navy">
+                    Our Vision
+                  </h3>
+                </div>
+                <p className="text-steel-blue leading-relaxed text-lg">
+                  {siteConfig.vision}
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Mission Card */}
+            <ScrollReveal animation="fadeUp" delay={0.2}>
+              <div className="group h-full p-8 md:p-10 rounded-xl bg-white border border-steel-blue/10 shadow-sm hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-1 h-8 bg-industrial-gold rounded-full" />
+                  <h3 className="font-heading text-lg tracking-[0.1em] uppercase text-deep-navy">
+                    Our Mission
+                  </h3>
+                </div>
+                <p className="text-steel-blue leading-relaxed text-lg">
+                  {siteConfig.mission}
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values Section - Image Left, Content Right */}
+      <section className="relative py-14 overflow-hidden bg-white">
+        <div className="container-jil relative z-10">
+          <div className="flex flex-col justify-center items-center gap-8 lg:gap-10 items-stretch">
+            {/* Left - Sticky Image */}
+            {/* <ScrollReveal animation="fadeUp" className="order-2 lg:order-1">
+              <div className="sticky top-24">
+                <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/mining-4.jpeg"
+                    alt="Team collaboration at Juggernaut Industries"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/40 via-transparent to-transparent" />
+                </div>
+              </div>
+            </ScrollReveal> */}
+
+            {/* Right - Content */}
+            <div className="space-y-8 ">
+              {/* Header */}
+              <ScrollReveal animation="fadeUp">
+                <div className="space-y-4 flex flex-col justify-start items-start">
+                  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-primary leading-[2.5rem]">
+                    OUR CORE
+                    <span className="block text-left text-xl md:text-2xl lg:text-3xl text-primary tracking-[0.15em]">
+                      VALUES
+                    </span>
+                  </h2>
+                </div>
+              </ScrollReveal>
+
+              {/* Description */}
+              <ScrollReveal animation="fadeUp" delay={0.1}>
+                <p className="text-steel-blue text-left max-w-2xl leading-relaxed">
+                  Our values define who we are and guide every decision we make. They are the
+                  foundation of our commitment to excellence and our dedication to serving Africa
+                  and its people.
+                </p>
+              </ScrollReveal>
+
+              {/* Divider */}
+              <div className="h-px w-full bg-primary/20" />
+
+              {/* Values Grid */}
+              <ScrollReveal animation="fadeUp" delay={0.2}>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {coreValues.map((value, index) => (
+                    <div
+                      key={index}
+                      className="p-4 rounded-xl bg-off-white/50 border border-steel-blue/5 hover:border-industrial-gold/20 transition-colors"
+                    >
+                      <div className='flex flex-row gap-3'>
+                          <div className="w-1 h-5 bg-industrial-gold rounded-full" />
+                          <h4 className="font-heading text-sm tracking-[0.1em] uppercase text-deep-navy mb-2">
+                            {value.title}
+                          </h4>
+                      </div>
+                      <p className="text-steel-blue text-sm leading-relaxed">
+                        {value.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 
     </>
   );

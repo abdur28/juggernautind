@@ -142,8 +142,8 @@ export const services: Service[] = [
     description:
       'Juggernaut Industries Ltd is an indigenous mineral exploration services company offering a full suite of services — from grass-roots exploration to advanced definition drill-outs — fully compliant with international reporting standards including JORC and NI 43-101.',
     fullDescription: [
-      'With deep experience across the African terrain and access to dedicated drilling rigs, geophysics equipment, and an in-house laboratory, the company delivers end-to-end solutions encompassing data compilation and review, planning, budgeting, drill campaign supervision, logistics, and project management.',
-      'Juggernaut Industries has demonstrated a strong track record in the field, having successfully completed Lead, Zinc, and Silver exploration on behalf of the Nigerian Government under the NIMEP program, yielding significant new discoveries, while also providing world-class grade control drilling services in partnership with the Segilola Gold Project.',
+      'With extensive experience across diverse Nigerian terrains, the company leverages advanced geophysical equipment and a fully equipped in-house laboratory to deliver comprehensive, end-to-end solutions. These services span data compilation and review, strategic planning and budgeting, drill campaign supervision, logistics coordination, and full-scale project management.',
+      'Juggernaut Industries has established a strong track record in the field, successfully executing Lead, Zinc, and Silver exploration projects on behalf of the Nigerian Government under the NIMEP program—resulting in significant new discoveries. The company has also delivered world-class grade control drilling services in collaboration with the Segilola Gold Project.',
     ],
     icon: 'Pickaxe',
     color: 'mining-green',

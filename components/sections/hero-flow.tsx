@@ -48,9 +48,16 @@ export function HeroFlow({ className }: HeroFlowProps) {
         className
       )}
     >
-      {/* Background Gradient */}
+      {/* Background Image & Overlay */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-deep-navy via-steel-blue/30 to-deep-navy" />
+        <Image
+          src={'/hero.jpeg'}
+          alt="Juggernaut Industries Background"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-deep-navy/95 via-deep-navy/80 to-deep-navy/95" />
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-industrial-gold/5 to-transparent" />
         {/* Subtle radial glow */}
         <div className="absolute top-1/4 -left-1/4 w-[60%] h-[60%] bg-steel-blue/15 rounded-full blur-[120px]" />
@@ -58,19 +65,40 @@ export function HeroFlow({ className }: HeroFlowProps) {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex-1 flex flex-col pt-28 md:pt-36 lg:pt-40">
+      <div className="relative z-10 flex-1 flex flex-col pt-28 md:pt-36 lg:pt-20">
         <div className="container-jil min-h-[100vh] flex-1 flex flex-col">
           {/* Hero Grid - Main Content */}
-          <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-8">
+          <div className="flex-1 flex w-full min-h-[calc(100vh-10rem)] h-full items-center justify-start gap-16 py-8">
             {/* Left - Typography */}
             <div className=" space-y-4">
+
+              {/* <Link href="/" className="flex flex-col w-full h-full items-center justify-center group">
+              <div className="relative w-32 h-32 md:w-40 md:h-40">
+                <Image
+                  src="/logo.png"
+                  alt="Juggernaut Industries Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col justify-center items-center">
+                <span className="font-display text-3xl md:text-4xl font-semibold text-off-white tracking-wide group-hover:text-industrial-gold transition-colors leading-[0.8em]">
+                  JUGGERNAUT
+                </span>
+                <span className="text-[14px] md:text-[16px] font-heading tracking-[0.2em] text-mid-gray uppercase">
+                  Industries Ltd
+                </span>
+              </div>
+            </Link> */}
+
               {/* Eyebrow */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <span className="inline-flex items-center gap-2 font-heading text-xs tracking-[0.2em] uppercase text-mid-gray">
+                <span className="inline-flex items-center w-full h-full justify-start gap-2 font-heading text-xs tracking-[0.2em] uppercase text-mid-gray">
                   <span className="w-8 h-px bg-industrial-gold" />
                   {heroContent.eyebrow}
                 </span>
@@ -101,7 +129,7 @@ export function HeroFlow({ className }: HeroFlowProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="text-4xl  text-light-gray max-w-lg font-light leading-relaxed"
+                className="text-xl md:text-2xl w-full h-full justify-start  text-left text-light-gray max-w-2xl font-light leading-relaxed"
               >
                 {heroContent.description}
               </motion.p>
@@ -111,7 +139,7 @@ export function HeroFlow({ className }: HeroFlowProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="flex flex-wrap items-center gap-4 pt-2"
+                className="flex flex-wrap justify-start items-center gap-4 pt-2"
               >
                 <Link
                   href={heroContent.cta.primary.href}
@@ -122,7 +150,7 @@ export function HeroFlow({ className }: HeroFlowProps) {
                 </Link>
               </motion.div>
             </div>
-
+{/* 
             <ScrollReveal animation="fadeUp" className=''>
             <div className="relative aspect-square w-full md:h-[500px] lg:h-[70vh] rounded-xl overflow-hidden">
               <Image
@@ -131,10 +159,10 @@ export function HeroFlow({ className }: HeroFlowProps) {
                 fill
                 className="object-cover"
               />
-              {/* Overlay gradient */}
+  
               <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/60 via-transparent to-transparent" />
             </div>
-          </ScrollReveal>
+          </ScrollReveal> */}
 
             {/* Right - Floating Card with Dynamic Content */}
             {/* <div className="lg:col-span-5  h-full flex items-end justify-end lg:justify-end">
